@@ -1,0 +1,188 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Hevinly
+  </title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   .font-poppins {
+      font-family: "Poppins", sans-serif;
+      letter-spacing: 0.15em;
+    }
+  </style>
+ </head>
+ <body class="bg-[#f5f5f5] min-h-screen flex flex-col sm:flex-row">
+  <aside class="w-full sm:w-72 bg-white border-b border-gray-300 sm:border-b-0 sm:border-r flex flex-col justify-between px-6 py-2 sm:px-8 sm:py-16 ">
+   <div class="flex items-center justify-between sm:flex sm:flex-col sm:items-center">
+    <a href="index.html">
+      <h1 class="font-poppins font-extrabold text-3xl mb-0 sm:mb-6 text-black tracking-widest text-center sm:text-center mt-4">
+        Hevinly
+      </h1>
+    </a>
+    <button id="menu-btn" aria-label="Toggle menu" class="sm:hidden text-black focus:outline-none">
+     <i id="menu-icon" class="fas fa-bars fa-lg"></i>
+    </button>
+   </div>
+   <nav id="menu" class="hidden flex-col space-y-2 text-sm mt-6 sm:flex sm:mt-0 sm:items-center items-center">
+    <a class="font-semibold text-black" href="index.html">
+     Home
+    </a>
+    <a class="text-gray-500" href="#">
+     About
+    </a>
+    <a class="text-gray-500" href="#">
+     Service
+    </a>
+    <a class="text-gray-500" href="portfolio.html">
+     Portfolio
+    </a>
+    <a class="text-gray-500" href="#">
+     News
+    </a>
+    <a class="text-gray-500" href="#">
+     Contact
+    </a>
+   </nav>
+   <div class="text-xs text-gray-400 leading-relaxed mt-6 sm:mt-0 sm:text-center text-center">
+    <p class="hidden sm:block">
+     © 2025 Hevinly
+    </p>
+    <p class="hidden sm:block">
+     Created by
+     <a class="text-gray-600 font-semibold hover:underline" href="#">
+      Solara
+     </a>
+    </p>
+   </div>
+  </aside>
+<main class="flex-1 h-full flex justify-center py-4 sm:py-10">
+    <div class="w-full max-w-5xl px-10">
+      <div class="mb-6">
+        <span
+          class="inline-block bg-gray-200 text-gray-700 text-xs font-semibold px-3 py-2 mb-2"
+          >CONTACT</span
+        >
+        <h2 class="text-3xl font-extrabold leading-tight">Get in Touch</h2>
+      </div>
+      <div class="w-full">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.927927927927!2d-74.011276684593!3d40.80544927932444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c258f3f7a3a3a3%3A0x7a7a7a7a7a7a7a7a!2sArmstrong%2C%202880%20Broadway%2C%20New%20York%2C%20NY%2010025%2C%20USA!5e0!3m2!1sen!2sus!4v1698662400000!5m2!1sen!2sus"
+          width="100%"
+          height="400"
+          style="border:0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Google map showing Armstrong, 2880 Broadway, New York, NY 10025, USA"
+        ></iframe>
+      </div>
+
+      <form
+        class="w-full mt-10 space-y-6"
+        action="https://formsubmit.co/hevin@gmail.com"
+        method="POST"
+      >
+        <input type="hidden" name="_captcha" value="false" />
+        <div class="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0">
+          <div class="flex-1">
+            <label
+              for="name"
+              class="block mb-2 text-sm font-semibold text-gray-700"
+              >Name</label
+            >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="w-full border border-gray-300 rounded-md px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-black focus:border-black"
+              placeholder="Your name"
+            />
+          </div>
+          <div class="flex-1">
+            <label
+              for="email"
+              class="block mb-2 text-sm font-semibold text-gray-700"
+              >Email</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="w-full border border-gray-300 rounded-md px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-black focus:border-black"
+              placeholder="you@example.com"
+            />
+          </div>
+        </div>
+        <div>
+          <label
+            for="message"
+            class="block mb-2 text-sm font-semibold text-gray-700"
+            >Message</label
+          >
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            required
+            class="w-full border border-gray-300 rounded-md px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-black focus:border-black resize-none"
+            placeholder="Write your message here"
+          ></textarea>
+        </div>
+        <div class="flex items-center justify-between">
+          <button
+            type="submit"
+            class="bg-black text-white font-semibold px-8 py-3 rounded-md hover:bg-gray-900 transition-colors duration-200"
+          >
+            Send Message
+          </button>
+          <div class="text-right text-gray-700 text-sm space-y-1">
+            <p>
+              <span class="font-semibold">Email:</span>
+              <a href="mailto:hevin@gmail.com" class="hover:underline"
+                >hevin@gmail.com</a
+              >
+            </p>
+            <p>
+              <span class="font-semibold">Mobile:</span> +1 (555) 123-4567
+            </p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+  <footer class="sm:hidden bg-white border-t border-gray-300 text-center py-4 text-xs text-gray-400">
+   © 2025 Hevinly | Created by
+   <a class="text-gray-600 font-semibold hover:underline" href="#">
+    Solara
+   </a>
+  </footer>
+  <script>
+   const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+    const icon = document.getElementById('menu-icon');
+
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+      menu.classList.toggle('flex');
+      if(icon.classList.contains('fa-bars')){
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+      } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
+  </script>
+ </body>
+</html>
