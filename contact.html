@@ -21,6 +21,14 @@
   </style>
  </head>
  <body class="bg-[#f5f5f5] min-h-screen flex flex-col sm:flex-row mb-6">
+  <!-- Language Switch Button -->
+  <div class="fixed top-4 left-4 sm:top-4 sm:right-4 sm:left-auto z-20">
+    <button id="lang-switch" class="bg-white border border-gray-300 rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors shadow-sm">
+      <i class="fas fa-globe mr-2"></i>
+      <span id="current-lang">EN</span>
+    </button>
+  </div>
+  
   <aside class="w-full sm:w-72 sm:fixed sm:top-0 sm:left-0 sm:h-screen bg-white border-b border-gray-300 sm:border-b-0 sm:border-r flex flex-col justify-between px-6 py-2 sm:px-8 sm:py-16 z-10">
    <div class="flex items-center justify-between sm:flex sm:flex-col sm:items-center">
     <a href="index.html">
@@ -33,31 +41,31 @@
     </button>
    </div>
    <nav id="menu" class="hidden flex-col space-y-2 text-sm mt-6 sm:flex sm:mt-0 sm:items-center items-center">
-    <a class="font-semibold text-black" href="index.html">
+    <a class="font-semibold text-black" href="index.html" data-lang="home">
      Home
     </a>
-    <a class="text-gray-500" href="#">
+    <a class="text-gray-500" href="#" data-lang="about">
      About
     </a>
-    <a class="text-gray-500" href="#">
+    <a class="text-gray-500" href="#" data-lang="service">
      Service
     </a>
-    <a class="text-gray-500" href="portfolio.html">
+    <a class="text-gray-500" href="portfolio.html" data-lang="portfolio">
      Portfolio
     </a>
-    <a class="text-gray-500" href="#">
+    <a class="text-gray-500" href="#" data-lang="news">
      News
     </a>
-    <a class="text-gray-500" href="contact.html">
+    <a class="text-gray-500" href="contact.html" data-lang="contact">
      Contact
     </a>
    </nav>
    <div class="text-xs text-gray-400 leading-relaxed mt-6 sm:mt-0 sm:text-center text-center">
-    <p class="hidden sm:block">
+    <p class="hidden sm:block" data-lang="copyright">
      © 2025 Hevinly
     </p>
     <p class="hidden sm:block">
-     Created by
+     <span data-lang="created-by">Created by</span>
      <a class="text-gray-600 font-semibold hover:underline" href="#">
       Solara
      </a>
@@ -69,9 +77,9 @@
       <div class="mb-6">
         <span
           class="inline-block bg-gray-200 text-gray-700 text-xs font-semibold px-3 py-2 mb-2"
-          >CONTACT</span
+          data-lang="contact-section">CONTACT</span
         >
-        <h2 class="text-3xl font-extrabold leading-tight">Get in Touch</h2>
+        <h2 class="text-3xl font-extrabold leading-tight" data-lang="get-in-touch">Get in Touch</h2>
       </div>
       <div class="w-full">
         <iframe
@@ -98,7 +106,7 @@
             <label
               for="name"
               class="block mb-2 text-sm font-semibold text-gray-700"
-              >Name</label
+              data-lang="name-label">Name</label
             >
             <input
               type="text"
@@ -107,13 +115,14 @@
               required
               class="w-full border border-gray-300 rounded-md px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-black focus:border-black"
               placeholder="Your name"
+              data-lang-placeholder="your-name"
             />
           </div>
           <div class="flex-1">
             <label
               for="email"
               class="block mb-2 text-sm font-semibold text-gray-700"
-              >Email</label
+              data-lang="email-label">Email</label
             >
             <input
               type="email"
@@ -122,6 +131,7 @@
               required
               class="w-full border border-gray-300 rounded-md px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-black focus:border-black"
               placeholder="you@example.com"
+              data-lang-placeholder="email-placeholder"
             />
           </div>
         </div>
@@ -129,7 +139,7 @@
           <label
             for="message"
             class="block mb-2 text-sm font-semibold text-gray-700"
-            >Message</label
+            data-lang="message-label">Message</label
           >
           <textarea
             id="message"
@@ -138,24 +148,23 @@
             required
             class="w-full border border-gray-300 rounded-md px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-black focus:border-black resize-none"
             placeholder="Write your message here"
+            data-lang-placeholder="message-placeholder"
           ></textarea>
         </div>
         <div class="flex items-center justify-between">
           <button
             type="submit"
             class="bg-black text-white font-semibold px-8 py-3 rounded-md hover:bg-gray-900 transition-colors duration-200"
-          >
-            Send Message
-          </button>
+            data-lang="send-message">Send Message</button>
           <div class="text-right text-gray-700 text-sm space-y-1">
             <p>
-              <span class="font-semibold">Email:</span>
+              <span class="font-semibold" data-lang="email-label">Email:</span>
               <a href="mailto:hevinperiyapperuma@gmail.com" class="hover:underline"
                 >hevinperiyapperuma@gmail.com</a
               >
             </p>
             <p>
-              <span class="font-semibold">Mobile:</span> +818058327913
+              <span class="font-semibold" data-lang="mobile-label">Mobile:</span> +818058327913
             </p>
           </div>
         </div>
@@ -163,27 +172,115 @@
     </div>
   </main>
   <footer class="sm:hidden bg-white border-t border-gray-300 text-center py-4 text-xs text-gray-400 ">
-   © 2025 Hevinly | Created by
+   <span data-lang="copyright">© 2025 Hevinly</span> | <span data-lang="created-by">Created by</span>
    <a class="text-gray-600 font-semibold hover:underline" href="#">
     Solara
    </a>
   </footer>
   <script>
+   // Menu toggle functionality
    const btn = document.getElementById('menu-btn');
-    const menu = document.getElementById('menu');
-    const icon = document.getElementById('menu-icon');
+   const menu = document.getElementById('menu');
+   const icon = document.getElementById('menu-icon');
 
-    btn.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-      menu.classList.toggle('flex');
-      if(icon.classList.contains('fa-bars')){
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-times');
-      } else {
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
-      }
-    });
+   btn.addEventListener('click', () => {
+     menu.classList.toggle('hidden');
+     menu.classList.toggle('flex');
+     if(icon.classList.contains('fa-bars')){
+       icon.classList.remove('fa-bars');
+       icon.classList.add('fa-times');
+     } else {
+       icon.classList.remove('fa-times');
+       icon.classList.add('fa-bars');
+     }
+   });
+
+   // Language switching functionality
+   const translations = {
+     en: {
+       home: 'Home',
+       about: 'About',
+       service: 'Service',
+       portfolio: 'Portfolio',
+       news: 'News',
+       contact: 'Contact',
+       copyright: '© 2025 Hevinly',
+       'created-by': 'Created by',
+       'contact-section': 'CONTACT',
+       'get-in-touch': 'Get in Touch',
+       'name-label': 'Name',
+       'email-label': 'Email',
+       'message-label': 'Message',
+       'send-message': 'Send Message',
+       'mobile-label': 'Mobile',
+       'your-name': 'Your name',
+       'email-placeholder': 'you@example.com',
+       'message-placeholder': 'Write your message here'
+     },
+     ja: {
+       home: 'ホーム',
+       about: '概要',
+       service: 'サービス',
+       portfolio: 'ポートフォリオ',
+       news: 'ニュース',
+       contact: 'お問い合わせ',
+       copyright: '© 2025 Hevinly',
+       'created-by': '作成者',
+       'contact-section': 'お問い合わせ',
+       'get-in-touch': 'お問い合わせ',
+       'name-label': '名前',
+       'email-label': 'メール',
+       'message-label': 'メッセージ',
+       'send-message': 'メッセージを送信',
+       'mobile-label': '携帯電話',
+       'your-name': 'お名前',
+       'email-placeholder': 'you@example.com',
+       'message-placeholder': 'こちらにメッセージをお書きください'
+     }
+   };
+
+   let currentLang = 'en';
+   
+   const langSwitch = document.getElementById('lang-switch');
+   const currentLangSpan = document.getElementById('current-lang');
+   
+   function switchLanguage() {
+     currentLang = currentLang === 'en' ? 'ja' : 'en';
+     currentLangSpan.textContent = currentLang === 'en' ? 'EN' : 'JA';
+     
+     // Update document language
+     document.documentElement.lang = currentLang;
+     
+     // Update all elements with data-lang attributes
+     const elements = document.querySelectorAll('[data-lang]');
+     elements.forEach(element => {
+       const key = element.getAttribute('data-lang');
+       if (translations[currentLang][key]) {
+         element.textContent = translations[currentLang][key];
+       }
+     });
+     
+     // Update placeholders
+     const placeholderElements = document.querySelectorAll('[data-lang-placeholder]');
+     placeholderElements.forEach(element => {
+       const key = element.getAttribute('data-lang-placeholder');
+       if (translations[currentLang][key]) {
+         element.placeholder = translations[currentLang][key];
+       }
+     });
+     
+     // Save language preference
+     localStorage.setItem('preferred-language', currentLang);
+   }
+   
+   // Load saved language preference
+   const savedLang = localStorage.getItem('preferred-language');
+   if (savedLang && savedLang !== 'en') {
+     currentLang = 'en'; // Set to opposite so switchLanguage() will change it to saved language
+     switchLanguage();
+   }
+   
+   langSwitch.addEventListener('click', switchLanguage);
   </script>
  </body>
 </html>
