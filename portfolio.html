@@ -12,7 +12,7 @@
   <script src="https://cdn.tailwindcss.com">
   </script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet"/>
   <style>
    .font-poppins {
       font-family: "Poppins", sans-serif;
@@ -33,26 +33,27 @@
     </button>
    </div>
    <nav id="menu" class="hidden flex-col space-y-2 text-sm mt-6 sm:flex sm:mt-0 sm:items-center items-center">
-    <a class="font-semibold text-black" href="index.html">
+    <a class="text-gray-500" href="index.html" data-i18n="nav_home">
      Home
     </a>
-    <a class="text-gray-500" href="about.html">
+    <a class="text-gray-500" href="about.html" data-i18n="nav_about">
      About
     </a>
-    <a class="text-gray-500" href="services.html">
+    <a class="text-gray-500" href="services.html" data-i18n="nav_service">
      Service
     </a>
-    <a class="font-semibold text-black" href="portfolio.html">
+    <a class="font-semibold text-black" href="portfolio.html" data-i18n="nav_portfolio">
      Portfolio
     </a>
-    <a class="text-gray-500" href="#">
+    <a class="text-gray-500" href="#" data-i18n="nav_news">
      News
     </a>
-    <a class="text-gray-500" href="contact.html">
+    <a class="text-gray-500" href="contact.html" data-i18n="nav_contact">
      Contact
     </a>
    </nav>
    <div class="text-xs text-gray-400 leading-relaxed mt-6 sm:mt-0 sm:text-center text-center">
+    <button id="lang-toggle" class="text-xs text-gray-500 hover:text-black mb-4">EN / JP</button>
     <p class="hidden sm:block">
      © 2025 Hevinly
     </p>
@@ -71,8 +72,8 @@
     <div class="w-full h-[200px]">
       <iframe class="w-full h-full rounded-2xl" src="https://www.youtube.com/embed/IyWJM6X0yUw" title="Promotional Video Production" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
-    <div class="text-black text-md text-center py-2 font-semibold">Promotional Video Production</div>
-    <div class="p-3 text-sm text-gray-700">
+    <div class="text-black text-md text-center py-2 font-semibold" data-i18n="servi_prom">Promotional Video Production</div>
+    <div class="p-3 text-sm text-gray-700" data-i18n="servi_prom_desc">
       Elevate your brand with our expertly crafted promotional videos. We blend creativity and strategy to deliver compelling visual stories. Let us help you engage your audience and boost your business presence.
     </div>
   </div>
@@ -80,8 +81,8 @@
     <div class="w-full h-[200px]">
       <iframe class="w-full h-full rounded-2xl" src="https://www.youtube.com/embed/videoseries?list=PLWRA-FeW-UU81XxbDZng0tDKONWaPtbho" title="Pod Cast" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
-    <div class="text-black text-md text-center py-2 font-semibold">Pod Cast</div>
-    <div class="p-3 text-sm text-gray-700">
+    <div class="text-black text-md text-center py-2 font-semibold" data-i18n="servi_pod">Pod Cast</div>
+    <div class="p-3 text-sm text-gray-700" data-i18n="servi_pod_desc">
       Tune in to our engaging podcasts featuring insightful conversations and inspiring stories. We cover a wide range of topics to keep you informed and entertained. Join our community and be part of the dialogue.
     </div>
   </div>
@@ -89,17 +90,17 @@
     <div class="w-full h-[200px]">
       <iframe class="w-full h-full rounded-2xl" src="https://www.youtube.com/embed/VSRgU5rppTQ" title="Documentary Production" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
-    <div class="text-black text-md text-center py-2 font-semibold">Documentary Production</div>
-    <div class="p-3 text-sm text-gray-700">
+    <div class="text-black text-md text-center py-2 font-semibold" data-i18n="servi_doc">Documentary Production</div>
+    <div class="p-3 text-sm text-gray-700" data-i18n="servi_doc_desc">
       Experience powerful storytelling through our documentary productions. We capture real-life events and perspectives with authenticity and depth. Discover new viewpoints and broaden your understanding with every film.
     </div>
   </div>
   <div class="w-full sm:w-[400px] flex flex-col rounded-2xl overflow-hidden shadow bg-white">
     <div class="w-full h-[200px] flex items-center justify-center bg-gray-100">
-      <span class="text-gray-500 text-center px-4">Instagram Reel preview is not available for direct embedding. <a href="https://www.instagram.com/reel/DL4iyc8STXg/?igsh=Y3BjZWt6ems5dG5u" target="_blank" class="text-blue-600 underline">Watch on Instagram</a></span>
+      <span class="text-gray-500 text-center px-4" data-i18n="instagram_note">Instagram Reel preview is not available for direct embedding. <a href="https://www.instagram.com/reel/DL4iyc8STXg/?igsh=Y3BjZWt6ems5dG5u" target="_blank" class="text-blue-600 underline">Watch on Instagram</a></span>
     </div>
-    <div class="text-black text-md text-center py-2 font-semibold">Social Media Content Production</div>
-    <div class="p-3 text-sm text-gray-700">
+    <div class="text-black text-md text-center py-2 font-semibold" data-i18n="servi_social">Social Media Content Production</div>
+    <div class="p-3 text-sm text-gray-700" data-i18n="servi_social_desc">
       Boost your online presence with our creative social media content. We design eye-catching visuals and videos tailored for every platform. Grow your audience and make a lasting impression in the digital world.
     </div>
   </div>
@@ -127,6 +128,47 @@
         icon.classList.add('fa-bars');
       }
     });
+
+    const translations = {
+      nav_home: { en: 'Home', jp: 'ホーム' },
+      nav_about: { en: 'About', jp: 'について' },
+      nav_service: { en: 'Service', jp: 'サービス' },
+      nav_portfolio: { en: 'Portfolio', jp: 'ポートフォリオ' },
+      nav_news: { en: 'News', jp: 'ニュース' },
+      nav_contact: { en: 'Contact', jp: 'お問い合わせ' },
+      servi_prom: { en: 'Promotional Video Production', jp: 'プロモーショナルビデオ制作' },
+      servi_prom_desc: { en: 'Elevate your brand with our expertly crafted promotional videos. We blend creativity and strategy to deliver compelling visual stories. Let us help you engage your audience and boost your business presence.', jp: '専門的に作られたプロモーショナルビデオであなたのブランドを向上させましょう。創造性と戦略を組み合わせ、魅力的で変換を促進する視覚的なストーリーを提供します。ビジネスが永遠の印象を与えるのに最適です。' },
+      servi_pod: { en: 'Pod Cast', jp: 'ポッドキャスト' },
+      servi_pod_desc: { en: 'Tune in to our engaging podcasts featuring insightful conversations and inspiring stories. We cover a wide range of topics to keep you informed and entertained. Join our community and be part of the dialogue.', jp: '洞察力のある会話とインスピレーションを与えるストーリーを特徴とする魅力的なポッドキャストにチューニングしましょう。私たちはあなたを情報提供しエンターテイメントする幅広いトピックをカバーします。私たちのコミュニティに参加し対話の一部になります。' },
+      servi_doc: { en: 'Documentary Production', jp: 'ドキュメンタリー制作' },
+      servi_doc_desc: { en: 'Experience powerful storytelling through our documentary productions. We capture real-life events and perspectives with authenticity and depth. Discover new viewpoints and broaden your understanding with every film.', jp: '私たちのドキュメンタリー制作を通じて強力なストーリーテリングを体験してください。私たちは本物と深みを持って実生活のイベントと視点を見つめます。新しい視点を発見し、すべての映画で理解を広げてください。' },
+      servi_social: { en: 'Social Media Content Production', jp: 'ソーシャルメディアコンテンツ制作' },
+      servi_social_desc: { en: 'Boost your online presence with our creative social media content. We design eye-catching visuals and videos tailored for every platform. Grow your audience and make a lasting impression in the digital world.', jp: '創造的なソーシャルメディアコンテンツであなたのオンラインプレゼンスを向上させましょう。Instagram、YouTube、TikTokなどのプラットフォームに合わせた目を引くキャラクターをデザインします。オーディエンスを成長させ、デジタル世界で永遠の印象を与えます。' },
+      instagram_note: { en: 'Instagram Reel preview is not available for direct embedding. <a href="https://www.instagram.com/reel/DL4iyc8STXg/?igsh=Y3BjZWt6ems5dG5u" target="_blank" class="text-blue-600 underline">Watch on Instagram</a>', jp: 'Instagram Reelのプレビューは直接埋め込みできません。 <a href="https://www.instagram.com/reel/DL4iyc8STXg/?igsh=Y3BjZWt6ems5dG5u" target="_blank" class="text-blue-600 underline">Instagramで視聴</a>' }
+    };
+
+    function loadLang() {
+      const lang = localStorage.getItem('lang') || 'en';
+      setLang(lang);
+    }
+
+    function setLang(lang) {
+      localStorage.setItem('lang', lang);
+      const elements = document.querySelectorAll('[data-i18n]');
+      elements.forEach(el => {
+        const key = el.dataset.i18n;
+        el.innerHTML = translations[key][lang];
+      });
+      document.getElementById('lang-toggle').innerText = lang === 'en' ? 'EN / JP' : 'JP / EN';
+    }
+
+    function switchLang() {
+      const current = localStorage.getItem('lang') || 'en';
+      setLang(current === 'en' ? 'jp' : 'en');
+    }
+
+    document.getElementById('lang-toggle').addEventListener('click', switchLang);
+    document.addEventListener('DOMContentLoaded', loadLang);
   </script>
  </body>
 </html>

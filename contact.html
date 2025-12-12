@@ -6,13 +6,13 @@
    Hevinly
   </title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <script src="https://cdn.tailwindcss.com">
   </script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet"/>
   <style>
    .font-poppins {
       font-family: "Poppins", sans-serif;
@@ -33,26 +33,27 @@
     </button>
    </div>
    <nav id="menu" class="hidden flex-col space-y-2 text-sm mt-6 sm:flex sm:mt-0 sm:items-center items-center">
-    <a class="font-semibold text-black" href="index.html">
+    <a class="font-semibold text-black" href="index.html" data-i18n="nav_home">
      Home
     </a>
-    <a class="text-gray-500" href="about.html">
+    <a class="text-gray-500" href="about.html" data-i18n="nav_about">
      About
     </a>
-    <a class="text-gray-500" href="services.html">
+    <a class="text-gray-500" href="services.html" data-i18n="nav_service">
      Service
     </a>
-    <a class="text-gray-500" href="portfolio.html">
+    <a class="text-gray-500" href="portfolio.html" data-i18n="nav_portfolio">
      Portfolio
     </a>
-    <a class="text-gray-500" href="#">
+    <a class="text-gray-500" href="#" data-i18n="nav_news">
      News
     </a>
-    <a class="font-semibold text-black" href="contact.html">
+    <a class="font-semibold text-black" href="contact.html" data-i18n="nav_contact">
      Contact
     </a>
    </nav>
    <div class="text-xs text-gray-400 leading-relaxed mt-6 sm:mt-0 sm:text-center text-center">
+    <button id="lang-toggle" class="text-xs text-gray-500 hover:text-black mb-4">EN / JP</button>
     <p class="hidden sm:block">
      © 2025 Hevinly
     </p>
@@ -69,9 +70,9 @@
       <div class="mb-6">
         <span
           class="inline-block bg-gray-200 text-gray-700 text-xs font-semibold px-3 py-2 mb-2"
-          >CONTACT</span
+          data-i18n="contact_category">CONTACT</span
         >
-        <h2 class="text-3xl font-extrabold leading-tight">Get in Touch</h2>
+        <h2 class="text-3xl font-extrabold leading-tight" data-i18n="contact_title">Get in Touch</h2>
       </div>
       <div class="w-full">
         <iframe
@@ -98,7 +99,7 @@
             <label
               for="name"
               class="block mb-2 text-sm font-semibold text-gray-700"
-              >Name</label
+              data-i18n="name_label">Name</label
             >
             <input
               type="text"
@@ -107,13 +108,14 @@
               required
               class="w-full border border-gray-300 rounded-md px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-black focus:border-black"
               placeholder="Your name"
+              data-i18n="placeholder_name"
             />
           </div>
           <div class="flex-1">
             <label
               for="email"
               class="block mb-2 text-sm font-semibold text-gray-700"
-              >Email</label
+              data-i18n="email_label">Email</label
             >
             <input
               type="email"
@@ -122,6 +124,7 @@
               required
               class="w-full border border-gray-300 rounded-md px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-black focus:border-black"
               placeholder="you@example.com"
+              data-i18n="placeholder_email"
             />
           </div>
         </div>
@@ -129,7 +132,7 @@
           <label
             for="message"
             class="block mb-2 text-sm font-semibold text-gray-700"
-            >Message</label
+            data-i18n="message_label">Message</label
           >
           <textarea
             id="message"
@@ -138,24 +141,24 @@
             required
             class="w-full border border-gray-300 rounded-md px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-black focus:border-black resize-none"
             placeholder="Write your message here"
+            data-i18n="placeholder_message"
           ></textarea>
         </div>
         <div class="flex items-center justify-between">
           <button
             type="submit"
             class="bg-black text-white font-semibold px-8 py-3 rounded-md hover:bg-gray-900 transition-colors duration-200"
+            data-i18n="send_message">Send Message</button
           >
-            Send Message
-          </button>
           <div class="text-right text-gray-700 text-sm space-y-1">
             <p>
-              <span class="font-semibold">Email:</span>
+              <span class="font-semibold" data-i18n="email_label_small">Email:</span>
               <a href="mailto:hevinperiyapperuma@gmail.com" class="hover:underline"
                 >hevinperiyapperuma@gmail.com</a
               >
             </p>
             <p>
-              <span class="font-semibold">Mobile:</span> +818058327913
+              <span class="font-semibold" data-i18n="mobile_label">Mobile:</span> +818058327913
             </p>
           </div>
         </div>
@@ -184,6 +187,53 @@
         icon.classList.add('fa-bars');
       }
     });
+
+    const translations = {
+      nav_home: { en: 'Home', jp: 'ホーム' },
+      nav_about: { en: 'About', jp: 'について' },
+      nav_service: { en: 'Service', jp: 'サービス' },
+      nav_portfolio: { en: 'Portfolio', jp: 'ポートフォリオ' },
+      nav_news: { en: 'News', jp: 'ニュース' },
+      nav_contact: { en: 'Contact', jp: 'お問い合わせ' },
+      contact_category: { en: 'CONTACT', jp: 'お問い合わせ' },
+      contact_title: { en: 'Get in Touch', jp: 'コンタクト' },
+      name_label: { en: 'Name', jp: '名前' },
+      email_label: { en: 'Email', jp: 'メール' },
+      message_label: { en: 'Message', jp: 'メッセージ' },
+      send_message: { en: 'Send Message', jp: 'メッセージを送信' },
+      placeholder_name: { en: 'Your name', jp: 'あなたの名前' },
+      placeholder_email: { en: 'you@example.com', jp: 'you@example.com' },
+      placeholder_message: { en: 'Write your message here', jp: 'ここにメッセージを書いてください' },
+      email_label_small: { en: 'Email:', jp: 'メール:' },
+      mobile_label: { en: 'Mobile:', jp: 'モバイル:' }
+    };
+
+    function loadLang() {
+      const lang = localStorage.getItem('lang') || 'en';
+      setLang(lang);
+    }
+
+    function setLang(lang) {
+      localStorage.setItem('lang', lang);
+      const elements = document.querySelectorAll('[data-i18n]');
+      elements.forEach(el => {
+        const key = el.dataset.i18n;
+        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+          el.placeholder = translations[key][lang];
+        } else {
+          el.innerText = translations[key][lang];
+        }
+      });
+      document.getElementById('lang-toggle').innerText = lang === 'en' ? 'EN / JP' : 'JP / EN';
+    }
+
+    function switchLang() {
+      const current = localStorage.getItem('lang') || 'en';
+      setLang(current === 'en' ? 'jp' : 'en');
+    }
+
+    document.getElementById('lang-toggle').addEventListener('click', switchLang);
+    document.addEventListener('DOMContentLoaded', loadLang);
   </script>
  </body>
 </html>
