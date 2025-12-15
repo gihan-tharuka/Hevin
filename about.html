@@ -153,6 +153,17 @@
       }
     });
 
+    async function translateText(text, from, to) {
+      const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${from}|${to}`;
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+        return data.responseData.translatedText;
+      } catch (e) {
+        return text; // fallback
+      }
+    }
+
     const translations = {
       nav_home: { en: 'Home', jp: 'ホーム' },
       nav_about: { en: 'About', jp: 'について' },
@@ -161,28 +172,66 @@
       nav_news: { en: 'News', jp: 'ニュース' },
       nav_contact: { en: 'Contact', jp: 'お問い合わせ' },
       about_title: { en: 'About Me', jp: '私について' },
-      about_desc1: { en: 'Hi, I\'m Hevin Randika, a dedicated videographer and photographer passionate about capturing life\'s most meaningful moments. With years of experience in visual storytelling, I specialize in transforming ideas into compelling narratives that resonate with audiences. From promotional videos to documentaries, I believe in the power of film to connect people and share authentic stories.', jp: 'こんにちは、私はヘビン・ランディカです。ビデオグラファーとフォトグラファーとして、人生で最も意味のある瞬間を捉えることに情熱を注いでいます。ビジュアルストーリーテリングの豊富な経験を持ち、オーディエンスに響く魅力的な物語にアイデアを変えることを専門としています。プロモーショナルビデオからドキュメンタリーまで、映画の力が人々をつなぎ、本物の物語を共有するという信念を持っています。' },
-      about_desc2: { en: 'My journey into videography and photography began with a love for creativity and technology. I\'ve worked on diverse projects, from corporate promotions to personal documentaries, always striving to blend artistic vision with technical excellence. When not behind the camera, you\'ll find me exploring new editing techniques and staying current with industry trends.', jp: 'ビデオグラファーとフォトグラフィーの旅は、創造性と技術への情熱から始まりました。私は企業プロモーションから個人ドキュメンタリーまで、多様なプロジェクトに取り組んでいます。常に芸術的なビジョンと技術的な卓越性を組み合わせるよう努めています。カメラの後ろにいないとき、私は新しい編集テクニックを探求し、業界トレンドを最新の状態に保っています。' }
+      about_desc1: { en: 'Hi, I\'m Hevin Randika, a dedicated videographer and photographer passionate about capturing life\'s most meaningful moments. With years of experience in visual storytelling, I specialize in transforming ideas into compelling narratives that resonate with audiences. From promotional videos to documentaries, I believe in the power of film to connect people and share authentic stories.',
+        jp: 'こんにちは、私はヘビン・ランディカです。ビデオグラファーとフォトグラファーとして、人生で最も意味のある瞬間を捉えることに情熱を注いでいます。ビジュアルストーリーテリングの豊富な経験を持ち、オーディエンスに響く魅力的な物語にアイデアを変えることを専門としています。プロモーショナルビデオからドキュメンタリーまで、映画の力が人々をつなぎ、本物の物語を共有するという信念を持っています。' },
+      about_desc2: { en: 'My journey into videography and photography began with a love for creativity and technology. I\'ve worked on diverse projects, from corporate promotions to personal documentaries, always striving to blend artistic vision with technical excellence. When not behind the camera, you\'ll find me exploring new editing techniques and staying current with industry trends.',
+        jp: 'ビデオグラファーとフォトグラフィーの旅は、創造性と技術への情熱から始まりました。私は企業プロモーションから個人ドキュメンタリーまで、多様なプロジェクトに取り組んでいます。常に芸術的なビジョンと技術的な卓越性を組み合わせるよう努めています。カメラの後ろにいないとき、私は新しい編集テクニックを探求し、業界トレンドを最新の状態に保っています。' }
     };
 
-    function loadLang() {
+    async function loadLang() {
       const lang = localStorage.getItem('lang') || 'en';
-      setLang(lang);
+      await setLang(lang);
     }
 
-    function setLang(lang) {
+    async function setLang(lang) {
       localStorage.setItem('lang', lang);
       const elements = document.querySelectorAll('[data-i18n]');
       elements.forEach(el => {
         const key = el.dataset.i18n;
         el.innerText = translations[key][lang];
       });
+      // Translate non-predefined content
+      if (lang === 'jp') {
+        // Text elements
+        const translatable = ['P', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'LI', 'SPAN'];
+        const tags = document.querySelectorAll(translatable.join(','));
+        const promises = [];
+        for (const el of tags) {
+          if (!el.hasAttribute('data-i18n') && !el.closest('[data-i18n]') && el.innerText.trim() && el.childElementCount === 0) {
+            if (!el.dataset.original) el.dataset.original = el.innerText;
+            promises.push(translateText(el.dataset.original, 'en', 'ja').then(translated => el.innerText = translated));
+          }
+        }
+        // Button text not data-i18n
+        const buttons = document.querySelectorAll('a:not([data-i18n])');
+        for (const btn of buttons) {
+          if (btn.innerText.trim() && btn.tagName === 'A' && btn.childElementCount === 0) {
+            if (!btn.dataset.original) btn.dataset.original = btn.innerText;
+            promises.push(translateText(btn.dataset.original, 'en', 'ja').then(translated => btn.innerText = translated));
+          }
+        }
+        // Alt texts
+        const imgs = document.querySelectorAll('img[alt]');
+        for (const img of imgs) {
+          if (!img.dataset.originalAlt) img.dataset.originalAlt = img.alt;
+          promises.push(translateText(img.dataset.originalAlt, 'en', 'ja').then(translated => img.alt = translated));
+        }
+        await Promise.all(promises);
+      } else {
+        // Restore originals
+        document.querySelectorAll('[data-original]').forEach(el => {
+          el.innerText = el.dataset.original;
+        });
+        document.querySelectorAll('[data-original-alt]').forEach(img => {
+          img.alt = img.dataset.originalAlt;
+        });
+      }
       document.querySelectorAll('.lang-toggle').forEach(btn => btn.innerText = lang === 'en' ? 'EN / JP' : 'JP / EN');
     }
 
-    function switchLang() {
+    async function switchLang() {
       const current = localStorage.getItem('lang') || 'en';
-      setLang(current === 'en' ? 'jp' : 'en');
+      await setLang(current === 'en' ? 'jp' : 'en');
     }
 
     document.querySelectorAll('.lang-toggle').forEach(btn => btn.addEventListener('click', switchLang));

@@ -161,6 +161,17 @@
       }
     });
 
+    async function translateText(text, from, to) {
+      const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${from}|${to}`;
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+        return data.responseData.translatedText;
+      } catch (e) {
+        return text; // fallback
+      }
+    }
+
     const translations = {
       nav_home: { en: 'Home', jp: 'ホーム' },
       nav_about: { en: 'About', jp: 'について' },
@@ -169,28 +180,65 @@
       nav_news: { en: 'News', jp: 'ニュース' },
       nav_contact: { en: 'Contact', jp: 'お問い合わせ' },
       hero_name: { en: 'Hevin Randika', jp: 'ヘビン・ランディカ' },
-      hero_desc: { en: 'I am a passionate videographer dedicated to capturing moments and telling compelling stories through film.', jp: '私は映画を通じて瞬間を捉え、感動的なストーリーを伝える情熱的なビデオグラファーです。' },
+      hero_desc: { en: 'I am a passionate videographer dedicated to capturing moments and telling compelling stories through film.',
+        jp: '私は映画を通じて瞬間を捉え、感動的なストーリーを伝える情熱的なビデオグラファーです。' },
       contact_me: { en: 'Contact Me', jp: 'お問い合わせ' }
     };
 
-    function loadLang() {
+    async function loadLang() {
       const lang = localStorage.getItem('lang') || 'en';
-      setLang(lang);
+      await setLang(lang);
     }
 
-    function setLang(lang) {
+    async function setLang(lang) {
       localStorage.setItem('lang', lang);
       const elements = document.querySelectorAll('[data-i18n]');
       elements.forEach(el => {
         const key = el.dataset.i18n;
         el.innerText = translations[key][lang];
       });
+      // Translate non-predefined content
+      if (lang === 'jp') {
+        // Text elements
+        const translatable = ['P', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'LI', 'SPAN'];
+        const tags = document.querySelectorAll(translatable.join(','));
+        const promises = [];
+        for (const el of tags) {
+          if (!el.hasAttribute('data-i18n') && !el.closest('[data-i18n]') && el.innerText.trim() && el.childElementCount === 0) {
+            if (!el.dataset.original) el.dataset.original = el.innerText;
+            promises.push(translateText(el.dataset.original, 'en', 'ja').then(translated => el.innerText = translated));
+          }
+        }
+        // Button text not data-i18n
+        const buttons = document.querySelectorAll('a[href*="portfolio"]');
+        for (const btn of buttons) {
+          if (!btn.hasAttribute('data-i18n') && btn.innerText.trim() && btn.tagName === 'A') {
+            if (!btn.dataset.original) btn.dataset.original = btn.innerText;
+            promises.push(translateText(btn.dataset.original, 'en', 'ja').then(translated => btn.innerText = translated));
+          }
+        }
+        // Alt texts
+        const imgs = document.querySelectorAll('img[alt]');
+        for (const img of imgs) {
+          if (!img.dataset.originalAlt) img.dataset.originalAlt = img.alt;
+          promises.push(translateText(img.dataset.originalAlt, 'en', 'ja').then(translated => img.alt = translated));
+        }
+        await Promise.all(promises);
+      } else {
+        // Restore originals
+        document.querySelectorAll('[data-original]').forEach(el => {
+          el.innerText = el.dataset.original;
+        });
+        document.querySelectorAll('[data-original-alt]').forEach(img => {
+          img.alt = img.dataset.originalAlt;
+        });
+      }
       document.querySelectorAll('.lang-toggle').forEach(btn => btn.innerText = lang === 'en' ? 'EN / JP' : 'JP / EN');
     }
 
-    function switchLang() {
+    async function switchLang() {
       const current = localStorage.getItem('lang') || 'en';
-      setLang(current === 'en' ? 'jp' : 'en');
+      await setLang(current === 'en' ? 'jp' : 'en');
     }
 
     document.querySelectorAll('.lang-toggle').forEach(btn => btn.addEventListener('click', switchLang));

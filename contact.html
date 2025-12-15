@@ -221,6 +221,17 @@
       }
     });
 
+    async function translateText(text, from, to) {
+      const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${from}|${to}`;
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+        return data.responseData.translatedText;
+      } catch (e) {
+        return text; // fallback
+      }
+    }
+
     const translations = {
       nav_home: { en: 'Home', jp: 'ホーム' },
       nav_about: { en: 'About', jp: 'について' },
@@ -241,12 +252,12 @@
       mobile_label: { en: 'Mobile:', jp: 'モバイル:' }
     };
 
-    function loadLang() {
+    async function loadLang() {
       const lang = localStorage.getItem('lang') || 'en';
-      setLang(lang);
+      await setLang(lang);
     }
 
-    function setLang(lang) {
+    async function setLang(lang) {
       localStorage.setItem('lang', lang);
       const elements = document.querySelectorAll('[data-i18n]');
       elements.forEach(el => {
@@ -257,12 +268,39 @@
           el.innerText = translations[key][lang];
         }
       });
+      // Translate non-predefined content
+      if (lang === 'jp') {
+        // Text elements
+        const translatable = ['P', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'LI', 'SPAN'];
+        const tags = document.querySelectorAll(translatable.join(','));
+        const promises = [];
+        for (const el of tags) {
+          if (!el.hasAttribute('data-i18n') && !el.closest('[data-i18n]') && el.innerText.trim() && el.childElementCount === 0) {
+            if (!el.dataset.original) el.dataset.original = el.innerText;
+            promises.push(translateText(el.dataset.original, 'en', 'ja').then(translated => el.innerText = translated));
+          }
+        }
+        // Button text not data-i18n
+        const buttons = document.querySelectorAll('h3:not([data-i18n])');
+        for (const btn of buttons) {
+          if (btn.innerText.trim() && btn.tagName === 'H3' && btn.childElementCount === 0) {
+            if (!btn.dataset.original) btn.dataset.original = btn.innerText;
+            promises.push(translateText(btn.dataset.original, 'en', 'ja').then(translated => btn.innerText = translated));
+          }
+        }
+        await Promise.all(promises);
+      } else {
+        // Restore originals
+        document.querySelectorAll('[data-original]').forEach(el => {
+          el.innerText = el.dataset.original;
+        });
+      }
       document.querySelectorAll('.lang-toggle').forEach(btn => btn.innerText = lang === 'en' ? 'EN / JP' : 'JP / EN');
     }
 
-    function switchLang() {
+    async function switchLang() {
       const current = localStorage.getItem('lang') || 'en';
-      setLang(current === 'en' ? 'jp' : 'en');
+      await setLang(current === 'en' ? 'jp' : 'en');
     }
 
     document.querySelectorAll('.lang-toggle').forEach(btn => btn.addEventListener('click', switchLang));
