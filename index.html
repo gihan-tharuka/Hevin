@@ -29,7 +29,7 @@
       </h1>
     </a>
     <div class="flex items-center space-x-2">
-      <button id="lang-toggle" aria-label="Language toggle" class="sm:hidden text-xs text-black hover:bg-gray-100 px-3 py-1 rounded-md border border-gray-300 transition">EN / JP</button>
+      <button class="lang-toggle" aria-label="Language toggle" class="sm:hidden text-xs text-black hover:bg-gray-100 px-3 py-1 rounded-md border border-gray-300 transition">EN / JP</button>
       <button id="menu-btn" aria-label="Toggle menu" class="sm:hidden text-black focus:outline-none">
        <i id="menu-icon" class="fas fa-bars fa-lg"></i>
       </button>
@@ -56,7 +56,7 @@
     </a>
    </nav>
    <div class="text-xs text-gray-400 leading-relaxed mt-6 sm:mt-0 sm:text-center text-center">
-    <button id="lang-toggle" class="hidden sm:block mx-auto text-xs text-black hover:bg-gray-100 px-3 py-1 rounded-md mb-4 border border-gray-300 transition">EN / JP</button>
+    <!-- <button class="lang-toggle" class="hidden sm:block mx-auto text-xs text-black hover:bg-gray-100 px-3 py-1 rounded-md mb-4 border border-gray-300 transition">EN / JP</button> -->
     <p class="hidden sm:block">
      © 2025 Hevinly
     </p>
@@ -185,7 +185,7 @@
         const key = el.dataset.i18n;
         el.innerText = translations[key][lang];
       });
-      document.getElementById('lang-toggle').innerText = lang === 'en' ? 'EN / JP' : 'JP / EN';
+      document.querySelectorAll('.lang-toggle').forEach(btn => btn.innerText = lang === 'en' ? 'EN / JP' : 'JP / EN');
     }
 
     function switchLang() {
@@ -193,7 +193,7 @@
       setLang(current === 'en' ? 'jp' : 'en');
     }
 
-    document.getElementById('lang-toggle').addEventListener('click', switchLang);
+    document.querySelectorAll('.lang-toggle').forEach(btn => btn.addEventListener('click', switchLang));
     document.addEventListener('DOMContentLoaded', loadLang);
   </script>
  </body>
