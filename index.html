@@ -1,5 +1,6 @@
+<!DOCTYPE html>
 <html lang="en">
- <head>
+<head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <title>
@@ -9,9 +10,10 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <script src="https://cdn.tailwindcss.com">
-  </script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+ <script src="https://cdn.tailwindcss.com">
+ </script>
+ <script async src="https://www.instagram.com/embed.js"></script>
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet"/>
   <style>
    .font-poppins {
@@ -20,8 +22,9 @@
     }
   </style>
  </head>
- <body class="bg-[#f5f5f5] min-h-screen flex flex-col sm:flex-row">
-  <aside class="w-full sm:w-72 sm:fixed sm:top-0 sm:left-0 sm:h-screen bg-white border-b border-gray-300 sm:border-b-0 sm:border-r flex flex-col justify-between px-6 py-2 sm:px-8 sm:py-16 z-10">
+
+<body class="bg-[#f5f5f5] min-h-screen flex flex-col sm:flex-row">
+<aside class="w-full sm:w-72 sm:fixed sm:top-0 sm:left-0 sm:h-screen bg-white border-b border-gray-300 sm:border-b-0 sm:border-r flex flex-col justify-between px-6 py-2 sm:px-8 sm:py-16 z-10">
    <div class="flex items-center justify-between sm:flex sm:flex-col sm:items-center">
     <a href="index.html">
       <h1 class="font-poppins font-extrabold text-3xl mb-0 sm:mb-6 text-black tracking-widest text-center sm:text-center mt-4">
@@ -36,22 +39,25 @@
     </div>
    </div>
    <nav id="menu" class="hidden flex-col space-y-2 text-sm mt-6 sm:flex sm:mt-0 sm:items-center items-center">
-    <a class="font-semibold text-black" href="index.html" data-i18n="nav_home">
+    <a class="{% if page.url == '/index.html' %}font-semibold text-black{% else %}text-gray-500{% endif %}" href="index.html" data-i18n="nav_home">
      Home
     </a>
-    <a class="text-gray-500" href="about.html" data-i18n="nav_about">
+    <a class="{% if page.url == '/about.html' %}font-semibold text-black{% else %}text-gray-500{% endif %}" href="about.html" data-i18n="nav_about">
      About
     </a>
     <!-- <a class="text-gray-500" href="services.html" data-i18n="nav_service">
      Service
     </a> -->
-    <a class="text-gray-500" href="portfolio.html" data-i18n="nav_portfolio">
+    <a class="{% if page.url == '/portfolio.html' %}font-semibold text-black{% else %}text-gray-500{% endif %}" href="portfolio.html" data-i18n="nav_portfolio">
      Portfolio
     </a>
+    <!-- <a class="{% if page.url == '/services.html' %}font-semibold text-black{% else %}text-gray-500{% endif %}" href="services.html" data-i18n="nav_service">
+     Service
+    </a> -->
     <!-- <a class="text-gray-500" href="#" data-i18n="nav_news">
      News
     </a> -->
-    <a class="text-gray-500" href="contact.html" data-i18n="nav_contact">
+    <a class="{% if page.url == '/contact.html' %}font-semibold text-black{% else %}text-gray-500{% endif %}" href="contact.html" data-i18n="nav_contact">
      Contact
     </a>
    </nav>
@@ -68,10 +74,13 @@
     </p>
    </div>
   </aside>
-  <main class="flex-1 h-screen overflow-y-auto sm:ml-72 flex items-center justify-center px-6 sm:px-10">
-   <div class="flex flex-col sm:flex-row items-center sm:items-center space-y-10 sm:space-y-0 sm:space-x-20 max-w-4xl w-full">
+
+<main class="flex-1 h-screen overflow-y-auto sm:ml-72">
+
+<div class="flex items-center justify-center px-6 sm:px-10">
+  <div class="flex flex-col sm:flex-row items-center sm:items-center space-y-10 sm:space-y-0 sm:space-x-20 max-w-4xl w-full">
     <div class="relative">
-  <img alt="Portrait of a smiling young man with curly hair in black and white" class="rounded-full border-8 border-gray-400 w-40 h-40 sm:w-52 sm:h-52" src="img/hevin.jpg"/>
+     <img alt="Portrait of a smiling young man with curly hair in black and white" class="rounded-full border-8 border-gray-400 w-40 h-40 sm:w-52 sm:h-52" src="img/hevin.jpg"/>
      <div class="absolute top-0 right-0 w-6 h-6 border-2 border-gray-700 rounded-full flex items-center justify-center">
       <div class="w-2.5 h-2.5 bg-white rounded-full">
       </div>
@@ -103,15 +112,18 @@
      </div>
      <button class="mt-6 bg-black text-white px-5 py-2 rounded-md font-semibold hover:bg-gray-800 transition" data-i18n="contact_me">Contact Me</button>
     </div>
-   </div>
-  </main>
-  <footer class="sm:hidden bg-white border-t border-gray-300 text-center py-4 text-xs text-gray-400">
+  </div>
+</div>
+
+</main>
+<footer class="sm:hidden bg-white border-t border-gray-300 text-center py-4 text-xs text-gray-400">
    © 2025 Hevinly | Created by
    <a class="text-gray-600 font-semibold hover:underline" href="#">
     Solara
    </a>
   </footer>
-  <script>
+
+<script>
    const btn = document.getElementById('menu-btn');
     const menu = document.getElementById('menu');
     const icon = document.getElementById('menu-icon');
@@ -137,7 +149,34 @@
       nav_contact: { en: 'Contact', jp: 'お問い合わせ' },
       hero_name: { en: 'Hevin Randika', jp: 'ヘビン・ランディカ' },
       hero_desc: { en: 'I am a passionate videographer dedicated to capturing moments and telling compelling stories through film.', jp: '私は映画を通じて瞬間を捉え、感動的なストーリーを伝える情熱的なビデオグラファーです。' },
-      contact_me: { en: 'Contact Me', jp: 'お問い合わせ' }
+      contact_me: { en: 'Contact Me', jp: 'お問い合わせ' },
+      about_title: { en: 'About Me', jp: '私について' },
+      about_desc1: { en: 'Hi, I\'m Hevin Randika, a dedicated videographer and photographer passionate about capturing life\'s most meaningful moments. With years of experience in visual storytelling, I specialize in transforming ideas into compelling narratives that resonate with audiences. From promotional videos to documentaries, I believe in the power of film to connect people and share authentic stories.', jp: 'こんにちは、私はヘビン・ランディカです。ビデオグラファーとフォトグラファーとして、人生で最も意味のある瞬間を捉えることに情熱を注いでいます。ビジュアルストーリーテリングの豊富な経験を持ち、オーディエンスに響く魅力的な物語にアイデアを変えることを専門としています。プロモーショナルビデオからドキュメンタリーまで、映画の力が人々をつなぎ、本物の物語を共有するという信念を持っています。' },
+      about_desc2: { en: 'My journey into videography and photography began with a love for creativity and technology. I\'ve worked on diverse projects, from corporate promotions to personal documentaries, always striving to blend artistic vision with technical excellence. When not behind the camera, you\'ll find me exploring new editing techniques and staying current with industry trends.', jp: 'ビデオグラファーとフォトグラフィーの旅は、創造性と技術への情熱から始まりました。私は企業プロモーションから個人ドキュメンタリーまで、多様なプロジェクトに取り組んでいます。常に芸術的なビジョンと技術的な卓越性を組み合わせるよう努めています。カメラの後ろにいないとき、私は新しい編集テクニックを探求し、業界トレンドを最新の状態に保っています。' },
+      contact_category: { en: 'CONTACT', jp: 'お問い合わせ' },
+      contact_title: { en: 'Get in Touch', jp: 'コンタクト' },
+      name_label: { en: 'Name', jp: '名前' },
+      email_label: { en: 'Email', jp: 'メール' },
+      message_label: { en: 'Message', jp: 'メッセージ' },
+      send_message: { en: 'Send Message', jp: 'メッセージを送信' },
+      placeholder_name: { en: 'Your name', jp: 'あなたの名前' },
+      placeholder_email: { en: 'you@example.com', jp: 'you@example.com' },
+      placeholder_message: { en: 'Write your message here', jp: 'ここにメッセージを書いてください' },
+      email_label_small: { en: 'Email:', jp: 'メール:' },
+      mobile_label: { en: 'Mobile:', jp: 'モバイル:' },
+      servi_prom: { en: 'Promotional Video Production', jp: 'プロモーショナルビデオ制作' },
+      servi_prom_desc: { en: 'Elevate your brand with our expertly crafted promotional videos. We blend creativity and strategy to deliver compelling visual stories. Let us help you engage your audience and boost your business presence.', jp: '専門的に作られたプロモーショナルビデオであなたのブランドを向上させましょう。創造性と戦略を組み合わせ、魅力的で変換を促進する視覚的なストーリーを提供します。ビジネスが永遠の印象を与えるのに最適です。' },
+      servi_pod: { en: 'Pod Cast', jp: 'ポッドキャスト' },
+      servi_pod_desc: { en: 'Tune in to our engaging podcasts featuring insightful conversations and inspiring stories. We cover a wide range of topics to keep you informed and entertained. Join our community and be part of the dialogue.', jp: '洞察力のある会話とインスピレーションを与えるストーリーを特徴とする魅力的なポッドキャストにチューニングしましょう。私たちはあなたを情報提供しエンターテイメントする幅広いトピックをカバーします。私たちのコミュニティに参加し対話の一部になります。' },
+      servi_doc: { en: 'Documentary Production', jp: 'ドキュメンタリー制作' },
+      servi_doc_desc: { en: 'Experience powerful storytelling through our documentary productions. We capture real-life events and perspectives with authenticity and depth. Discover new viewpoints and broaden your understanding with every film.', jp: '私たちのドキュメンタリー制作を通じて強力なストーリーテリングを体験してください。私たちは本物と深みを持って実生活のイベントと視点を見つめます。新しい視点を発見し、すべての映画で理解を広げてください。' },
+      servi_social: { en: 'Social Media Content Production', jp: 'ソーシャルメディアコンテンツ制作' },
+      servi_social_desc: { en: 'Boost your online presence with our creative social media content. We design eye-catching visuals and videos tailored for every platform. Grow your audience and make a lasting impression in the digital world.', jp: '創造的なソーシャルメディアコンテンツであなたのオンラインプレゼンスを向上させましょう。Instagram、YouTube、TikTokなどのプラットフォームに合わせた目を引くキャラクターをデザインします。オーディエンスを成長させ、デジタル世界で永遠の印象を与えます。' },
+      instagram_note: { en: 'Instagram Reel preview is not available for direct embedding. <a href="https://www.instagram.com/reel/DL4iyc8STXg/?igsh=Y3BjZWt6ems5dG5u" target="_blank" class="text-blue-600 underline">Watch on Instagram</a>', jp: 'Instagram Reelのプレビューは直接埋め込みできません。 <a href="https://www.instagram.com/reel/DL4iyc8STXg/?igsh=Y3BjZWt6ems5dG5u" target="_blank" class="text-blue-600 underline">Instagramで視聴</a>' },
+      servi_photo: { en: 'Photography Services', jp: '写真サービス' },
+      servi_photo_desc: { en: 'Professional photography for portraits, events, and promotional content. I specialize in capturing authentic moments that tell your story visually, from studio shoots to on-location sessions.', jp: 'ポートレート、イベント、プロモーショナルコンテンツのためのプロフェッショナル写真。スタジオ撮影からオンサイトセッションまで、視覚的にあなたの物語を伝える本物の瞬間を捉えることを専門としています。' },
+      servi_edit: { en: 'Video Editing & Post-Production', jp: 'ビデオ編集とポストプロダクション' },
+      servi_edit_desc: { en: 'Transform raw footage into polished masterpieces with professional editing services. Including color grading, sound design, and special effects to bring your vision to life with technical precision.', jp: 'プロフェッショナルな編集サービスで生の映像を磨かれた傑作に変えます。色のグレーディング、音響設計、特殊効果など、あなたのビジョンを技術的な精密さで実現します。' }
     };
 
     function loadLang() {
@@ -150,7 +189,11 @@
       const elements = document.querySelectorAll('[data-i18n]');
       elements.forEach(el => {
         const key = el.dataset.i18n;
-        el.innerText = translations[key][lang];
+        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+          el.placeholder = translations[key][lang];
+        } else {
+          el.innerHTML = translations[key][lang];
+        }
       });
       document.getElementById('lang-toggle').innerText = lang === 'en' ? 'EN / JP' : 'JP / EN';
     }
@@ -162,6 +205,74 @@
 
     document.getElementById('lang-toggle').addEventListener('click', switchLang);
     document.addEventListener('DOMContentLoaded', loadLang);
+
+    // Portfolio Tabs
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const sections = document.querySelectorAll('.category-section');
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const category = button.getAttribute('data-category');
+        tabButtons.forEach(btn => {
+          btn.classList.remove('active');
+          btn.classList.add('bg-gray-200', 'text-gray-700');
+          btn.classList.remove('bg-black', 'text-white');
+        });
+        button.classList.add('active');
+        button.classList.remove('bg-gray-200', 'text-gray-700');
+        button.classList.add('bg-black', 'text-white');
+
+        sections.forEach(section => section.style.display = 'none');
+        if (category === 'all') {
+          sections.forEach(section => section.style.display = 'block');
+        } else {
+          const selectedSection = document.querySelector(`.category-section.${category}`);
+          if (selectedSection) selectedSection.style.display = 'block';
+        }
+      });
+    });
+
+    // View All Reels Toggle
+    const viewAllBtn = document.getElementById('view-all-reels-btn');
+    if (viewAllBtn) {
+      viewAllBtn.addEventListener('click', function() {
+        const hiddenReels = document.querySelector('.hidden-reels');
+        if (hiddenReels.style.display === 'none' || hiddenReels.style.display === '') {
+          hiddenReels.style.display = 'block';
+          this.textContent = 'Show Less';
+        } else {
+          hiddenReels.style.display = 'none';
+          this.textContent = 'View All Reels';
+        }
+      });
+    }
+
+    // View All Reels Toggle for Kings
+    const viewAllKingsBtn = document.getElementById('view-all-kings-btn');
+    if (viewAllKingsBtn) {
+      viewAllKingsBtn.addEventListener('click', function() {
+        const kingsGrid = viewAllKingsBtn.previousElementSibling;
+        const kingsDivs = Array.from(kingsGrid.querySelectorAll('.bg-white'));
+        const hiddenDivs = kingsDivs.slice(2);
+        const isHidden = hiddenDivs[0].style.display === 'none' || hiddenDivs[0].style.display === '';
+        hiddenDivs.forEach(div => div.style.display = isHidden ? 'block' : 'none');
+        this.textContent = isHidden ? 'Show Less' : 'View All Reels';
+      });
+    }
+
+    // View All Reels Toggle for Unbound
+    const viewAllUnboundBtn = document.getElementById('view-all-unbound-btn');
+    if (viewAllUnboundBtn) {
+      viewAllUnboundBtn.addEventListener('click', function() {
+        const unboundGrid = viewAllUnboundBtn.previousElementSibling;
+        const unboundDivs = Array.from(unboundGrid.querySelectorAll('.bg-white'));
+        const hiddenDivs = unboundDivs.slice(2);
+        const isHidden = hiddenDivs[0].style.display === 'none' || hiddenDivs[0].style.display === '';
+        hiddenDivs.forEach(div => div.style.display = isHidden ? 'block' : 'none');
+        this.textContent = isHidden ? 'Show Less' : 'View All Reels';
+      });
+    }
   </script>
- </body>
+
+</body>
 </html>

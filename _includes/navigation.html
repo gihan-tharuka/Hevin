@@ -1,0 +1,50 @@
+<aside class="w-full sm:w-72 sm:fixed sm:top-0 sm:left-0 sm:h-screen bg-white border-b border-gray-300 sm:border-b-0 sm:border-r flex flex-col justify-between px-6 py-2 sm:px-8 sm:py-16 z-10">
+   <div class="flex items-center justify-between sm:flex sm:flex-col sm:items-center">
+    <a href="index.html">
+      <h1 class="font-poppins font-extrabold text-3xl mb-0 sm:mb-6 text-black tracking-widest text-center sm:text-center mt-4">
+        Hevinly
+      </h1>
+    </a>
+    <div class="flex items-center space-x-2">
+      <button id="lang-toggle" aria-label="Language toggle" class="sm:hidden text-xs text-black hover:bg-gray-100 px-3 py-1 rounded-md border border-gray-300 transition">EN / JP</button>
+      <button id="menu-btn" aria-label="Toggle menu" class="sm:hidden text-black focus:outline-none">
+       <i id="menu-icon" class="fas fa-bars fa-lg"></i>
+      </button>
+    </div>
+   </div>
+   <nav id="menu" class="hidden flex-col space-y-2 text-sm mt-6 sm:flex sm:mt-0 sm:items-center items-center">
+    <a class="{% if page.url == '/' %}font-semibold text-black{% else %}text-gray-500{% endif %}" href="index.html" data-i18n="nav_home">
+     Home
+    </a>
+    <a class="{% if page.url == '/about.html' %}font-semibold text-black{% else %}text-gray-500{% endif %}" href="about.html" data-i18n="nav_about">
+     About
+    </a>
+    <!-- <a class="text-gray-500" href="services.html" data-i18n="nav_service">
+     Service
+    </a> -->
+    <a class="{% if page.url == '/portfolio.html' %}font-semibold text-black{% else %}text-gray-500{% endif %}" href="portfolio.html" data-i18n="nav_portfolio">
+     Portfolio
+    </a>
+    <!-- <a class="{% if page.url == '/services.html' %}font-semibold text-black{% else %}text-gray-500{% endif %}" href="services.html" data-i18n="nav_service">
+     Service
+    </a> -->
+    <!-- <a class="text-gray-500" href="#" data-i18n="nav_news">
+     News
+    </a> -->
+    <a class="{% if page.url == '/contact.html' %}font-semibold text-black{% else %}text-gray-500{% endif %}" href="contact.html" data-i18n="nav_contact">
+     Contact
+    </a>
+   </nav>
+   <div class="text-xs text-gray-400 leading-relaxed mt-6 sm:mt-0 sm:text-center text-center">
+    <button id="lang-toggle" class="hidden sm:block mx-auto text-xs text-black hover:bg-gray-100 px-3 py-1 rounded-md mb-4 border border-gray-300 transition">EN / JP</button>
+    <p class="hidden sm:block">
+     © 2025 Hevinly
+    </p>
+    <p class="hidden sm:block">
+     Created by
+     <a class="text-gray-600 font-semibold hover:underline" href="#">
+      Solara
+     </a>
+    </p>
+   </div>
+  </aside>
