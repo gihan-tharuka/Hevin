@@ -1,0 +1,290 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Hevinly - Skills
+  </title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet"/>
+  <style>
+   .font-poppins {
+      font-family: "Poppins", sans-serif;
+      letter-spacing: 0.15em;
+    }
+    .skill-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .skill-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    .proficiency-bar {
+      height: 8px;
+      border-radius: 4px;
+      background: #e5e7eb;
+      overflow: hidden;
+    }
+    .proficiency-fill {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.8s ease;
+    }
+    .proficiency-professional { background: linear-gradient(90deg, #10b981, #059669); width: 95%; }
+    .proficiency-intermediate { background: linear-gradient(90deg, #f59e0b, #d97706); width: 75%; }
+    .proficiency-beginner { background: linear-gradient(90deg, #ef4444, #dc2626); width: 45%; }
+  </style>
+ </head>
+ <body class="bg-[#f5f5f5] min-h-screen flex flex-col sm:flex-row">
+  <aside class="w-full sm:w-72 sm:fixed sm:top-0 sm:left-0 sm:h-screen bg-white border-b border-gray-300 sm:border-b-0 sm:border-r flex flex-col justify-between px-6 py-2 sm:px-8 sm:py-16 z-10">
+   <div class="flex items-center justify-between sm:flex sm:flex-col sm:items-center">
+    <a href="index.html">
+      <h1 class="font-poppins font-extrabold text-3xl mb-0 sm:mb-6 text-black tracking-widest text-center sm:text-center mt-4">
+        Hevinly
+      </h1>
+    </a>
+    <div class="flex items-center space-x-2">
+      <button id="lang-toggle" aria-label="Language toggle" class="sm:hidden text-xs text-black hover:bg-gray-100 px-3 py-1 rounded-md border border-gray-300 transition">EN / JP</button>
+      <button id="menu-btn" aria-label="Toggle menu" class="sm:hidden text-black focus:outline-none">
+       <i id="menu-icon" class="fas fa-bars fa-lg"></i>
+      </button>
+    </div>
+   </div>
+   <nav id="menu" class="hidden flex-col space-y-2 text-sm mt-6 sm:flex sm:mt-0 sm:items-center items-center">
+    <a class="text-gray-500" href="index.html" data-i18n="nav_home">
+     Home
+    </a>
+    <a class="text-gray-500" href="about.html" data-i18n="nav_about">
+     About
+    </a>
+    <a class="font-semibold text-black" href="skills.html" data-i18n="nav_skills">
+     Skills
+    </a>
+    <a class="text-gray-500" href="portfolio.html" data-i18n="nav_portfolio">
+     Portfolio
+    </a>
+    <a class="text-gray-500" href="contact.html" data-i18n="nav_contact">
+     Contact
+    </a>
+   </nav>
+   <div class="text-xs text-gray-400 leading-relaxed mt-6 sm:mt-0 sm:text-center text-center">
+    <button id="lang-toggle" class="hidden sm:block mx-auto text-xs text-black hover:bg-gray-100 px-3 py-1 rounded-md mb-4 border border-gray-300 transition">EN / JP</button>
+    <p class="hidden sm:block">
+     © 2025 Hevinly
+    </p>
+    <p class="hidden sm:block">
+     Created by
+     <a class="text-gray-600 font-semibold hover:underline" href="#">
+      Solara
+     </a>
+    </p>
+   </div>
+  </aside>
+  <main class="flex-1 overflow-y-auto sm:ml-72 py-4 sm:py-10">
+   <div class="max-w-6xl mx-auto px-6 sm:px-10">
+    <div class="text-center mb-12">
+     <h2 class="font-poppins font-extrabold text-4xl sm:text-5xl text-black mb-4" data-i18n="skills_title">
+      My Skills & Tools
+     </h2>
+     <p class="text-gray-600 text-lg max-w-2xl mx-auto" data-i18n="skills_subtitle">
+      Professional software tools and technologies I use to bring creative visions to life
+     </p>
+    </div>
+
+    <!-- Photography Section -->
+    <div class="bg-white rounded-3xl shadow-lg p-8 sm:p-12 mb-8">
+     <div class="flex items-center mb-8">
+      <i class="fas fa-camera text-3xl text-blue-600 mr-4"></i>
+      <h3 class="font-poppins font-bold text-3xl text-black" data-i18n="photography_title">Photography</h3>
+     </div>
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="skill-card bg-gradient-to-br from-blue-50 to-white rounded-xl p-6 border border-blue-100">
+       <div class="flex items-center mb-4">
+        <i class="fab fa-adobe text-2xl text-red-600 mr-3"></i>
+        <h4 class="text-xl font-semibold text-gray-800">Adobe Photoshop</h4>
+       </div>
+       <p class="text-gray-600 mb-4">Professional photo editing and manipulation</p>
+       <div class="proficiency-bar">
+        <div class="proficiency-fill proficiency-professional"></div>
+       </div>
+       <p class="text-sm text-gray-500 mt-2">Professional Level</p>
+      </div>
+      <div class="skill-card bg-gradient-to-br from-blue-50 to-white rounded-xl p-6 border border-blue-100">
+       <div class="flex items-center mb-4">
+        <i class="fas fa-sun text-2xl text-orange-600 mr-3"></i>
+        <h4 class="text-xl font-semibold text-gray-800">Adobe Lightroom CC</h4>
+       </div>
+       <p class="text-gray-600 mb-4">Professional photo editing and organization</p>
+       <div class="proficiency-bar">
+        <div class="proficiency-fill proficiency-professional"></div>
+       </div>
+       <p class="text-sm text-gray-500 mt-2">Professional Level</p>
+      </div>
+     </div>
+    </div>
+
+    <!-- Videography Section -->
+    <div class="bg-white rounded-3xl shadow-lg p-8 sm:p-12 mb-8">
+     <div class="flex items-center mb-8">
+      <i class="fas fa-video text-3xl text-green-600 mr-4"></i>
+      <h3 class="font-poppins font-bold text-3xl text-black" data-i18n="videography_title">Videography</h3>
+     </div>
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="skill-card bg-gradient-to-br from-green-50 to-white rounded-xl p-6 border border-green-100">
+       <div class="flex items-center mb-4">
+        <i class="fas fa-film text-2xl text-black mr-3"></i>
+        <h4 class="text-xl font-semibold text-gray-800">DaVinci Resolve</h4>
+       </div>
+       <p class="text-gray-600 mb-4">Professional color grading and video editing</p>
+       <div class="proficiency-bar">
+        <div class="proficiency-fill proficiency-professional"></div>
+       </div>
+       <p class="text-sm text-gray-500 mt-2">Professional Level</p>
+      </div>
+      <div class="skill-card bg-gradient-to-br from-purple-50 to-white rounded-xl p-6 border border-purple-100">
+       <div class="flex items-center mb-4">
+        <i class="fab fa-adobe text-2xl text-purple-600 mr-3"></i>
+        <h4 class="text-xl font-semibold text-gray-800">Adobe After Effects</h4>
+       </div>
+       <p class="text-gray-600 mb-4">Motion graphics and visual effects</p>
+       <div class="proficiency-bar">
+        <div class="proficiency-fill proficiency-beginner"></div>
+       </div>
+       <p class="text-sm text-gray-500 mt-2">Beginner Level</p>
+      </div>
+      <div class="skill-card bg-gradient-to-br from-blue-50 to-white rounded-xl p-6 border border-blue-100">
+       <div class="flex items-center mb-4">
+        <i class="fas fa-apple text-2xl text-gray-800 mr-3"></i>
+        <h4 class="text-xl font-semibold text-gray-800">Final Cut Pro</h4>
+       </div>
+       <p class="text-gray-600 mb-4">Professional video editing software</p>
+       <div class="proficiency-bar">
+        <div class="proficiency-fill proficiency-intermediate"></div>
+       </div>
+       <p class="text-sm text-gray-500 mt-2">Intermediate Level</p>
+      </div>
+      <div class="skill-card bg-gradient-to-br from-purple-50 to-white rounded-xl p-6 border border-purple-100">
+       <div class="flex items-center mb-4">
+        <i class="fab fa-adobe text-2xl text-purple-600 mr-3"></i>
+        <h4 class="text-xl font-semibold text-gray-800">Adobe Premiere Pro</h4>
+       </div>
+       <p class="text-gray-600 mb-4">Professional video editing and production</p>
+       <div class="proficiency-bar">
+        <div class="proficiency-fill proficiency-intermediate"></div>
+       </div>
+       <p class="text-sm text-gray-500 mt-2">Intermediate Level</p>
+      </div>
+     </div>
+    </div>
+
+    <!-- Design Section -->
+    <div class="bg-white rounded-3xl shadow-lg p-8 sm:p-12 mb-8">
+     <div class="flex items-center mb-8">
+      <i class="fas fa-palette text-3xl text-purple-600 mr-4"></i>
+      <h3 class="font-poppins font-bold text-3xl text-black" data-i18n="design_title">Design</h3>
+     </div>
+     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="skill-card bg-gradient-to-br from-blue-50 to-white rounded-xl p-6 border border-blue-100">
+       <div class="flex items-center mb-4">
+        <i class="fab fa-adobe text-2xl text-red-600 mr-3"></i>
+        <h4 class="text-xl font-semibold text-gray-800">Adobe Photoshop</h4>
+       </div>
+       <p class="text-gray-600 mb-4">Digital design and graphics</p>
+       <div class="proficiency-bar">
+        <div class="proficiency-fill proficiency-professional"></div>
+       </div>
+       <p class="text-sm text-gray-500 mt-2">Professional Level</p>
+      </div>
+      <div class="skill-card bg-gradient-to-br from-pink-50 to-white rounded-xl p-6 border border-pink-100">
+       <div class="flex items-center mb-4">
+        <i class="fas fa-magic text-2xl text-pink-600 mr-3"></i>
+        <h4 class="text-xl font-semibold text-gray-800">Canva</h4>
+       </div>
+       <p class="text-gray-600 mb-4">Graphic design and social media content</p>
+       <div class="proficiency-bar">
+        <div class="proficiency-fill proficiency-professional"></div>
+       </div>
+       <p class="text-sm text-gray-500 mt-2">Professional Level</p>
+      </div>
+      <div class="skill-card bg-gradient-to-br from-orange-50 to-white rounded-xl p-6 border border-orange-100">
+       <div class="flex items-center mb-4">
+        <i class="fas fa-pencil-alt text-2xl text-orange-600 mr-3"></i>
+        <h4 class="text-xl font-semibold text-gray-800">Procreate</h4>
+       </div>
+       <p class="text-gray-600 mb-4">Digital illustration and drawing</p>
+       <div class="proficiency-bar">
+        <div class="proficiency-fill proficiency-professional"></div>
+       </div>
+       <p class="text-sm text-gray-500 mt-2">Professional Level</p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </main>
+  <footer class="sm:hidden bg-white border-t border-gray-300 text-center py-4 text-xs text-gray-400">
+   © 2025 Hevinly | Created by
+   <a class="text-gray-600 font-semibold hover:underline" href="#">
+    Solara
+   </a>
+  </footer>
+  <script>
+   const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+    const icon = document.getElementById('menu-icon');
+
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+      menu.classList.toggle('flex');
+      if(icon.classList.contains('fa-bars')){
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+      } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
+
+    const translations = {
+      nav_home: { en: 'Home', jp: 'ホーム' },
+      nav_about: { en: 'About', jp: 'について' },
+      nav_skills: { en: 'Skills', jp: 'スキル' },
+      nav_portfolio: { en: 'Portfolio', jp: 'ポートフォリオ' },
+      nav_contact: { en: 'Contact', jp: 'お問い合わせ' },
+      skills_title: { en: 'My Skills & Tools', jp: '私のスキルとツール' },
+      skills_subtitle: { en: 'Professional software tools and technologies I use to bring creative visions to life', jp: '創造的なビジョンを現実にするために使用するプロフェッショナルなソフトウェアツールとテクノロジー' },
+      photography_title: { en: 'Photography', jp: '写真' },
+      videography_title: { en: 'Videography', jp: 'ビデオグラフィー' },
+      design_title: { en: 'Design', jp: 'デザイン' }
+    };
+
+    function loadLang() {
+      const lang = localStorage.getItem('lang') || 'en';
+      setLang(lang);
+    }
+
+    function setLang(lang) {
+      localStorage.setItem('lang', lang);
+      const elements = document.querySelectorAll('[data-i18n]');
+      elements.forEach(el => {
+        const key = el.dataset.i18n;
+        el.innerText = translations[key][lang];
+      });
+      document.getElementById('lang-toggle').innerText = lang === 'en' ? 'EN / JP' : 'JP / EN';
+    }
+
+    function switchLang() {
+      const current = localStorage.getItem('lang') || 'en';
+      setLang(current === 'en' ? 'jp' : 'en');
+    }
+
+    document.getElementById('lang-toggle').addEventListener('click', switchLang);
+    document.addEventListener('DOMContentLoaded', loadLang);
+  </script>
+ </body>
+</html>
