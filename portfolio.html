@@ -500,7 +500,7 @@
     const viewAllKingsBtn = document.getElementById('view-all-kings-btn');
     if (viewAllKingsBtn) {
       viewAllKingsBtn.addEventListener('click', function() {
-        const kingsGrid = viewAllKingsBtn.previousElementSibling;
+        const kingsGrid = this.parentElement.previousElementSibling;
         const kingsDivs = Array.from(kingsGrid.querySelectorAll('.bg-white'));
         const hiddenDivs = kingsDivs.slice(2);
         const isHidden = hiddenDivs[0].style.display === 'none' || hiddenDivs[0].style.display === '';
@@ -513,7 +513,7 @@
     const viewAllUnboundBtn = document.getElementById('view-all-unbound-btn');
     if (viewAllUnboundBtn) {
       viewAllUnboundBtn.addEventListener('click', function() {
-        const unboundGrid = viewAllUnboundBtn.previousElementSibling;
+        const unboundGrid = this.parentElement.previousElementSibling;
         const unboundDivs = Array.from(unboundGrid.querySelectorAll('.bg-white'));
         const hiddenDivs = unboundDivs.slice(2);
         const isHidden = hiddenDivs[0].style.display === 'none' || hiddenDivs[0].style.display === '';
