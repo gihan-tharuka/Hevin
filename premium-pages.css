@@ -3,8 +3,8 @@
   overflow-x: hidden;
   background-color: #f8fafc;
   background-image:
-    linear-gradient(#e5e7eb 1px, transparent 1px),
-    linear-gradient(90deg, #e5e7eb 1px, transparent 1px);
+    linear-gradient(rgba(71, 85, 105, 0.075) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(71, 85, 105, 0.075) 1px, transparent 1px);
   background-size: 48px 48px;
 }
 

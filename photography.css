@@ -1,8 +1,8 @@
 .photography-page {
   background-color: #f8fafc;
   background-image:
-    linear-gradient(rgba(15, 23, 42, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(15, 23, 42, 0.025) 1px, transparent 1px),
+    linear-gradient(rgba(71, 85, 105, 0.075) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(71, 85, 105, 0.075) 1px, transparent 1px),
     radial-gradient(circle at 85% 5%, rgba(245, 158, 11, 0.12), transparent 30rem);
   background-size: 48px 48px, 48px 48px, auto;
 }
