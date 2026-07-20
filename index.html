@@ -12,8 +12,9 @@
   <script src="https://cdn.tailwindcss.com">
   </script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&amp;display=swap" rel="stylesheet"/>
   <link href="nav.css" rel="stylesheet"/>
+  <link href="premium-pages.css" rel="stylesheet"/>
   <script src="site.js" defer></script>
   <style>
    .font-poppins {
@@ -44,15 +45,15 @@
     <a class="flex items-center space-x-3 text-gray-500 hover:bg-green-100 hover:text-green-700 px-4 py-2 rounded-lg transition-all duration-300" href="about.html" data-i18n="nav_about">
      <i class="fas fa-info-circle text-green-500"></i><span>About</span>
     </a>
+    <a class="flex items-center space-x-3 text-gray-500 px-4 py-2 rounded-lg transition-all duration-300" href="photography.html" data-i18n="nav_photography">
+     <i class="fas fa-camera"></i><span>Photography</span>
+    </a>
     <a class="flex items-center space-x-3 text-gray-500 hover:bg-amber-100 hover:text-amber-700 px-4 py-2 rounded-lg transition-all duration-300" href="videography.html" data-i18n="nav_videography">
      <i class="fas fa-video text-amber-500"></i><span>Videography</span>
     </a>
     <!-- <a class="text-gray-500" href="services.html" data-i18n="nav_service">
      Service
     </a> -->
-    <a class="flex items-center space-x-3 text-gray-500 hover:bg-purple-100 hover:text-purple-700 px-4 py-2 rounded-lg transition-all duration-300" href="portfolio.html" data-i18n="nav_portfolio">
-     <i class="fas fa-briefcase text-purple-500"></i><span>Portfolio</span>
-    </a>
     <!-- <a class="flex items-center space-x-3 text-gray-500 hover:bg-yellow-100 hover:text-yellow-700 px-4 py-2 rounded-lg transition-all duration-300" href="#" data-i18n="nav_news">
      <i class="fas fa-newspaper text-yellow-500"></i><span>News</span>
     </a> -->
@@ -68,53 +69,33 @@
     </p>
    </div>
   </aside>
-  <main class="flex-1 overflow-y-auto sm:ml-72 bg-gradient-to-br from-gray-50 to-white min-h-screen">
-   <div class="flex items-center justify-center min-h-screen px-6 sm:px-10 py-10">
-    <div class="bg-white rounded-3xl shadow-2xl p-8 sm:p-12 max-w-5xl w-full transform hover:scale-105 transition-transform duration-500">
-     <div class="flex flex-col lg:flex-row items-center lg:items-center space-y-10 lg:space-y-0 lg:space-x-16">
-      <div class="relative">
-       <img alt="Portrait of Hevin Randika" class="rounded-full border-8 border-gray-300 shadow-xl w-48 h-48 sm:w-64 sm:w-64 transform hover:rotate-6 hover:scale-110 transition-transform duration-500" src="img/hevin.jpg"/>
-       <div class="absolute top-0 right-0 w-8 h-8 bg-green-500 border-4 border-white rounded-full flex items-center justify-center animate-pulse">
-        <i class="fas fa-check text-white text-xs"></i>
-       </div>
+  <main class="premium-page flex-1 sm:ml-72 min-h-screen">
+   <section class="premium-content min-h-screen flex items-center px-6 py-16 sm:px-10 lg:px-16">
+    <div class="max-w-6xl mx-auto w-full grid lg:grid-cols-[1.08fr_0.92fr] gap-14 lg:gap-20 items-center">
+     <div class="text-center lg:text-left">
+      <p class="premium-eyebrow justify-center lg:justify-start mb-7">Independent visual storyteller</p>
+      <h1 class="premium-display text-5xl sm:text-6xl xl:text-7xl font-bold text-gray-950 leading-[1.05] mb-5" data-i18n="hero_name">Hevin Randika</h1>
+      <h2 class="text-xl sm:text-2xl text-gray-500 font-light tracking-wide mb-7">Videographer <span class="text-amber-500">&amp;</span> Photographer</h2>
+      <p class="text-gray-600 max-w-xl leading-relaxed text-lg mx-auto lg:mx-0 mb-9" data-i18n="hero_desc">I am a passionate videographer dedicated to capturing moments and telling compelling stories through film. Exploring the art of visual storytelling to bring ideas to life.</p>
+      <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-3 mb-9">
+       <a href="videography.html" class="inline-flex items-center justify-center gap-3 bg-gray-950 text-white px-7 py-3.5 rounded-full font-semibold hover:bg-gray-800 transition shadow-lg"><span>Explore Films</span><i class="fas fa-arrow-right text-xs"></i></a>
+       <a href="contact.html" class="inline-flex items-center justify-center border border-gray-300 bg-white text-gray-900 px-7 py-3.5 rounded-full font-semibold hover:border-gray-500 transition" data-i18n="contact_me">Contact Me</a>
       </div>
-      <div class="max-w-2xl text-center lg:text-left px-4 lg:px-0 w-full">
-       <p class="text-gray-600 text-lg font-semibold mb-2 tracking-wide">Welcome to my world</p>
-       <h1 class="font-poppins font-extrabold text-4xl lg:text-6xl text-black mb-4 leading-tight" data-i18n="hero_name">
-        Hevin Randika
-       </h1>
-       <h3 class="text-2xl lg:text-3xl text-gray-700 font-light mb-6 italic">
-        Videographer & Photographer
-       </h3>
-       <p class="text-gray-600 mb-8 max-w-lg leading-relaxed text-lg mx-auto lg:mx-0" data-i18n="hero_desc">
-        I am a passionate videographer dedicated to capturing moments and telling compelling stories through film. Exploring the art of visual storytelling to bring ideas to life.
-       </p>
-       <div class="flex justify-center lg:justify-start items-center space-x-6 text-black text-2xl mb-6">
-        <a aria-label="YouTube" class="hover:text-red-600 transition-colors duration-300" href="https://www.youtube.com/@hevinperry">
-         <i class="fab fa-youtube"></i>
-        </a>
-        <a aria-label="Instagram" class="hover:text-pink-600 transition-colors duration-300" href="https://www.instagram.com/hevinperry/">
-         <i class="fab fa-instagram"></i>
-        </a>
-        <a aria-label="LinkedIn" class="hover:text-blue-600 transition-colors duration-300" href="https://www.linkedin.com/in/hevinperiyapperuma/">
-         <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a aria-label="Facebook" class="hover:text-blue-700 transition-colors duration-300" href="https://www.facebook.com/hevinperry/">
-         <i class="fab fa-facebook-f"></i>
-        </a>
-        <a aria-label="Threads" class="hover:text-gray-600 transition-colors duration-300" href="https://www.threads.com/@hevinperry">
-         <i class="fab fa-threads"></i>
-        </a>
-       </div>
-       <div class="flex justify-center lg:justify-start space-x-4">
-        <a href="contact.html" class="bg-black text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1" data-i18n="contact_me">Contact Me</a>
-        <a href="portfolio.html" class="border-2 border-black text-black px-8 py-3 rounded-full font-semibold hover:bg-black hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">View Portfolio</a>
-       </div>
+      <div class="premium-social flex justify-center lg:justify-start gap-3">
+       <a aria-label="Instagram" title="Instagram" href="https://www.instagram.com/hevinperiyapperuma" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+       <a aria-label="Call +81 80 5832 7913" title="Mobile" href="tel:+818058327913"><i class="fas fa-phone-alt"></i></a>
+       <a aria-label="Email Hevin Randika" title="Email" href="mailto:hevinperiyapperuma@gmail.com"><i class="far fa-envelope"></i></a>
       </div>
      </div>
+     <figure class="relative max-w-md mx-auto lg:max-w-none">
+      <div class="absolute -inset-5 sm:-inset-7 rounded-[2.5rem] bg-amber-100 rotate-3"></div>
+      <img alt="Portrait of Hevin Randika" class="premium-photo relative w-full aspect-[4/5] object-cover rounded-[2rem]" src="img/hevin.jpg"/>
+      <figcaption class="absolute -bottom-5 left-5 right-5 sm:left-auto sm:right-6 bg-white/95 backdrop-blur rounded-2xl px-5 py-4 shadow-xl border border-white">
+       <p class="text-[0.65rem] uppercase tracking-[0.24em] text-amber-600 font-bold">Film · Photo · Story</p>
+      </figcaption>
+     </figure>
     </div>
-   </div>
-
+   </section>
   </main>
   <footer class="sm:hidden bg-white border-t border-gray-300 text-center py-4 text-xs text-gray-400">
    © <span data-current-year></span> Hevinly | Developed by
@@ -151,6 +132,7 @@
     const translations = {
       nav_home: { en: 'Home', jp: 'ホーム' },
       nav_about: { en: 'About', jp: 'について' },
+      nav_photography: { en: 'Photography', jp: '写真' },
       nav_videography: { en: 'Videography', jp: 'ビデオグラフィー' },
       nav_skills: { en: 'Skills', jp: 'スキル' },
       nav_service: { en: 'Service', jp: 'サービス' },

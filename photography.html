@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="Product, people, and lifestyle photography by Hevin Randika." name="description"/>
+  <title>Photography | Hevinly</title>
+  <link rel="icon" href="favicon.ico"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+  <link href="nav.css" rel="stylesheet"/>
+  <link href="premium-pages.css" rel="stylesheet"/>
+  <link href="photography.css" rel="stylesheet"/>
+  <script src="site.js" defer></script>
+  <style>.font-poppins { font-family: "Poppins", sans-serif; letter-spacing: .15em; } body { font-family: "Inter", sans-serif; }</style>
+ </head>
+ <body class="bg-slate-50 min-h-screen flex flex-col sm:flex-row overflow-x-hidden">
+  <aside class="w-full min-w-0 sm:w-72 sm:fixed sm:inset-y-0 sm:left-0 sm:h-screen bg-white border-b sm:border-b-0 sm:border-r flex flex-col justify-between px-6 py-2 sm:px-8 sm:py-16 z-20">
+   <div class="flex items-center justify-between sm:flex sm:flex-col sm:items-center">
+    <a href="index.html"><h1 class="font-poppins font-extrabold text-3xl text-black text-center">Hevinly</h1></a>
+    <div class="flex items-center space-x-6">
+     <button class="lang-toggle sm:hidden text-xs text-black px-3 py-1 border" aria-label="Language toggle">EN / JP</button>
+     <button id="menu-btn" aria-label="Toggle menu" aria-expanded="false" class="sm:hidden text-black"><i id="menu-icon" class="fas fa-bars"></i></button>
+    </div>
+   </div>
+   <nav id="menu" class="hidden flex-col text-sm mt-6 sm:flex sm:mt-0">
+    <a href="index.html"><i class="fas fa-home"></i><span data-i18n="nav_home">Home</span></a>
+    <a href="about.html"><i class="fas fa-info-circle"></i><span data-i18n="nav_about">About</span></a>
+    <a href="photography.html" aria-current="page" class="font-semibold"><i class="fas fa-camera"></i><span data-i18n="nav_photography">Photography</span></a>
+    <a href="videography.html"><i class="fas fa-video"></i><span data-i18n="nav_videography">Videography</span></a>
+   </nav>
+   <div class="text-xs text-gray-400 leading-relaxed text-center">
+    <button class="lang-toggle hidden sm:inline-flex items-center justify-center mx-auto text-xs text-black px-4 py-2 mb-4 border" aria-label="Language toggle">EN / JP</button>
+    <p class="hidden sm:block">© <span data-current-year></span> Hevinly</p>
+    <p class="hidden sm:block">Developed by <a class="text-gray-600 font-semibold hover:underline" href="https://www.brandgradestudio.com/" target="_blank" rel="noopener noreferrer">Brandgrade Studio</a></p>
+   </div>
+  </aside>
+
+  <main class="photography-main photography-page flex-1 min-w-0 sm:ml-72">
+   <header class="premium-content min-h-[68vh] flex items-end px-6 py-16 sm:px-10 lg:px-16 lg:py-20">
+    <div class="max-w-6xl mx-auto w-full grid lg:grid-cols-[1fr_0.75fr] gap-10 items-end">
+     <div>
+      <p class="premium-eyebrow mb-7" data-i18n="photo_eyebrow">Selected photography</p>
+      <h1 class="premium-display text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.04] text-gray-950" data-i18n="photo_title">Still frames.<br/>Living stories.</h1>
+     </div>
+     <p class="text-lg sm:text-xl text-gray-600 leading-relaxed font-light" data-i18n="photo_intro">A curated collection of product, portrait, and lifestyle imagery shaped by light, detail, and honest human moments.</p>
+    </div>
+   </header>
+
+   <section class="px-6 py-16 sm:px-10 lg:px-16 lg:py-24 border-t border-gray-200">
+    <div class="max-w-6xl mx-auto">
+     <div class="grid lg:grid-cols-[0.75fr_1.25fr] gap-6 lg:gap-16 mb-12 items-end">
+      <div><p class="text-xs tracking-[.28em] text-amber-600 font-bold mb-4">01 · BRAND &amp; DETAIL</p><h2 class="premium-display text-4xl sm:text-5xl font-bold" data-i18n="product_title">Product Photography</h2></div>
+      <p class="text-gray-600 text-lg leading-relaxed" data-i18n="product_desc">Showcasing products with clean, compelling imagery that highlights quality, craftsmanship, and brand identity.</p>
+     </div>
+     <div class="photo-gallery" aria-label="Product photography gallery">
+      <figure class="photo-card"><img src="img/Product/bread &amp; espresso 8th nov screen-1.jpg" alt="Bread and Espresso team member preparing a product" loading="lazy"/></figure>
+      <figure class="photo-card"><img src="img/Product/bread &amp; espresso 8th nov screen-12.jpg" alt="Freshly baked Bread and Espresso pastries" loading="lazy"/></figure>
+      <figure class="photo-card"><img src="img/Product/bread &amp; espresso 8th nov screen-14.jpg" alt="Bread and Espresso packaged baked goods" loading="lazy"/></figure>
+      <figure class="photo-card"><img src="img/Product/bread &amp; espresso 8th nov screen-15.jpg" alt="French toast product presentation" loading="lazy"/></figure>
+      <figure class="photo-card"><img src="img/Product/bread &amp; espresso 8th nov screen-25.jpg" alt="Bread and Espresso storefront detail" loading="lazy"/></figure>
+      <figure class="photo-card"><img src="img/Product/bread &amp; espresso 8th nov screen-48.jpg" alt="Bread and Espresso striped street sign" loading="lazy"/></figure>
+      <figure class="photo-card"><img src="img/Product/bread &amp; espresso 8th nov screen-60.jpg" alt="Bread and Espresso exterior" loading="lazy"/></figure>
+      <figure class="photo-card"><img src="img/Product/bread &amp; espresso 8th nov screen-86.jpg" alt="Cafe drink product photography" loading="lazy"/></figure>
+      <figure class="photo-card"><img src="img/Product/bread &amp; espresso 8th nov screen-87.jpg" alt="Bread and Espresso menu and brand materials" loading="lazy"/></figure>
+      <figure class="photo-card"><img src="img/Product/bread &amp; espresso 8th nov screen-90.jpg" alt="Architectural ceiling detail at Bread and Espresso" loading="lazy"/></figure>
+     </div>
+    </div>
+   </section>
+
+   <section class="px-6 py-16 sm:px-10 lg:px-16 lg:py-24 border-t border-gray-200 bg-white/55">
+    <div class="max-w-6xl mx-auto">
+     <div class="grid lg:grid-cols-[0.75fr_1.25fr] gap-6 lg:gap-16 mb-12 items-end">
+      <div><p class="text-xs tracking-[.28em] text-amber-600 font-bold mb-4">02 · PORTRAIT &amp; LIFESTYLE</p><h2 class="premium-display text-4xl sm:text-5xl font-bold" data-i18n="people_title">People &amp; Moments</h2></div>
+      <p class="text-gray-600 text-lg leading-relaxed" data-i18n="people_desc">Creative model photography for fashion, food, and lifestyle brands. Through thoughtful direction, natural interactions, and cinematic storytelling, we create engaging visuals that showcase your products and bring your brand to life.</p>
+     </div>
+     <div class="photo-gallery" aria-label="People and moments photography gallery">
+      <figure class="photo-card"><img src="img/Model shoot/ゆか-2.jpg" alt="Fashion portrait against a striped wall" loading="lazy"/></figure>
+      <figure class="photo-card"><img src="img/Model shoot/ゆか-3.jpg" alt="Creative seated fashion portrait" loading="lazy"/></figure>
+      <figure class="photo-card"><img src="img/Model shoot/ゆか-4.jpg" alt="Lifestyle model portrait" loading="lazy"/></figure>
+      <figure class="photo-card"><img src="img/Model shoot/ゆか-5.jpg" alt="Close-up fashion portrait" loading="lazy"/></figure>
+      <figure class="photo-card"><img src="img/Model shoot/ゆか-6.jpg" alt="Smiling lifestyle portrait" loading="lazy"/></figure>
+     </div>
+    </div>
+   </section>
+  </main>
+
+  <footer class="sm:hidden bg-white border-t border-gray-200 text-center py-5 text-xs text-gray-500">© <span data-current-year></span> Hevinly | Developed by <a class="text-gray-700 font-semibold" href="https://www.brandgradestudio.com/" target="_blank" rel="noopener noreferrer">Brandgrade Studio</a></footer>
+  <div id="photo-lightbox" class="photo-lightbox" role="dialog" aria-modal="true" aria-label="Expanded photograph"><button id="lightbox-close" aria-label="Close photograph"><i class="fas fa-times"></i></button><img id="lightbox-image" alt=""/></div>
+
+  <script>
+   const translations = {
+     nav_home:{en:'Home',jp:'ホーム'}, nav_about:{en:'About',jp:'について'}, nav_photography:{en:'Photography',jp:'写真'}, nav_videography:{en:'Videography',jp:'ビデオグラフィー'}, nav_portfolio:{en:'Portfolio',jp:'ポートフォリオ'},
+     photo_eyebrow:{en:'Selected photography',jp:'厳選写真'}, photo_title:{en:'Still frames. Living stories.',jp:'静止画に宿る、生きた物語。'}, photo_intro:{en:'A curated collection of product, portrait, and lifestyle imagery shaped by light, detail, and honest human moments.',jp:'光、ディテール、ありのままの瞬間で形づくられた、商品・ポートレート・ライフスタイル写真のコレクション。'},
+     product_title:{en:'Product Photography',jp:'商品撮影'}, product_desc:{en:'Showcasing products with clean, compelling imagery that highlights quality, craftsmanship, and brand identity.',jp:'商品の魅力や品質、細部へのこだわりを引き立てる、洗練されたビジュアルを制作します。ブランドの世界観を表現し、お客様の心を惹きつける写真をお届けします。'},
+     people_title:{en:'People & Moments',jp:'人物・ライフスタイル撮影'}, people_desc:{en:'Creative model photography for fashion, food, and lifestyle brands. Through thoughtful direction, natural interactions, and cinematic storytelling, we create engaging visuals that showcase your products and bring your brand to life.',jp:'ファッション、フード、ライフスタイルブランドのためのクリエイティブな人物撮影。丁寧なディレクションと自然な表情・動きを通して、ブランドの魅力や商品の価値を伝える、印象的なビジュアルを制作します。'}
+   };
+   const menuButton=document.getElementById('menu-btn'), menu=document.getElementById('menu'), menuIcon=document.getElementById('menu-icon');
+   menuButton.addEventListener('click',()=>{const open=menu.classList.toggle('hidden')===false;menu.classList.toggle('flex',open);menuButton.setAttribute('aria-expanded',String(open));menuIcon.classList.toggle('fa-bars',!open);menuIcon.classList.toggle('fa-times',open);});
+   function setLang(lang){localStorage.setItem('lang',lang);document.documentElement.lang=lang==='jp'?'ja':'en';document.querySelectorAll('[data-i18n]').forEach(el=>{const value=translations[el.dataset.i18n];if(value)el.textContent=value[lang];});document.querySelectorAll('.lang-toggle').forEach(btn=>btn.textContent=lang==='en'?'EN / JP':'JP / EN');}
+   document.querySelectorAll('.lang-toggle').forEach(btn=>btn.addEventListener('click',()=>setLang((localStorage.getItem('lang')||'en')==='en'?'jp':'en')));setLang(localStorage.getItem('lang')||'en');
+   const lightbox=document.getElementById('photo-lightbox'), lightboxImage=document.getElementById('lightbox-image'), closeButton=document.getElementById('lightbox-close');
+   function closeLightbox(){lightbox.classList.remove('is-open');document.body.style.overflow='';}
+   document.querySelectorAll('.photo-card img').forEach(image=>image.addEventListener('click',()=>{lightboxImage.src=image.src;lightboxImage.alt=image.alt;lightbox.classList.add('is-open');document.body.style.overflow='hidden';closeButton.focus();}));
+   closeButton.addEventListener('click',closeLightbox);lightbox.addEventListener('click',event=>{if(event.target===lightbox)closeLightbox();});document.addEventListener('keydown',event=>{if(event.key==='Escape')closeLightbox();});
+  </script>
+ </body>
+</html>

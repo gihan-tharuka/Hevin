@@ -29,10 +29,13 @@
    }
 
    .cinematic-main {
-     background:
+     background-color: #f8fafc;
+     background-image:
+       linear-gradient(rgba(15, 23, 42, 0.025) 1px, transparent 1px),
+       linear-gradient(90deg, rgba(15, 23, 42, 0.025) 1px, transparent 1px),
        radial-gradient(circle at 75% 8%, rgba(245, 158, 11, 0.1), transparent 28rem),
-       radial-gradient(circle at 18% 75%, rgba(148, 163, 184, 0.12), transparent 32rem),
-       #f8fafc;
+       radial-gradient(circle at 18% 75%, rgba(148, 163, 184, 0.12), transparent 32rem);
+     background-size: 48px 48px, 48px 48px, auto, auto;
    }
 
    .film-frame {
@@ -113,11 +116,11 @@
     <a class="flex items-center space-x-3 text-gray-500 hover:bg-green-100 hover:text-green-700 px-4 py-2 rounded-lg transition-all duration-300" href="about.html">
      <i class="fas fa-info-circle text-green-500"></i><span data-i18n="nav_about">About</span>
     </a>
+    <a class="flex items-center space-x-3 text-gray-500 px-4 py-2 rounded-lg transition-all duration-300" href="photography.html">
+     <i class="fas fa-camera"></i><span data-i18n="nav_photography">Photography</span>
+    </a>
     <a aria-current="page" class="flex items-center space-x-3 font-semibold text-black bg-amber-100 px-4 py-2 rounded-lg" href="videography.html">
      <i class="fas fa-video text-amber-600"></i><span data-i18n="nav_videography">Videography</span>
-    </a>
-    <a class="flex items-center space-x-3 text-gray-500 hover:bg-purple-100 hover:text-purple-700 px-4 py-2 rounded-lg transition-all duration-300" href="portfolio.html">
-     <i class="fas fa-briefcase text-purple-500"></i><span data-i18n="nav_portfolio">Portfolio</span>
     </a>
    </nav>
    <div class="text-xs text-gray-400 leading-relaxed mt-6 sm:mt-0 sm:text-center text-center">
@@ -191,7 +194,7 @@
       <iframe
        id="youtube-player"
        class="absolute inset-0 w-full h-full"
-       src="https://www.youtube.com/embed/VSRgU5rppTQ?enablejsapi=1&amp;playsinline=1&amp;rel=0"
+       src="https://www.youtube.com/embed/VSRgU5rppTQ?enablejsapi=1&amp;playsinline=1&amp;rel=0&amp;start=17"
        title="Catch the Fire of Dreaming with the Father video player"
        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
        allowfullscreen>
@@ -219,7 +222,7 @@
       <iframe
        id="india-mission-player"
        class="absolute inset-0 w-full h-full"
-       src="https://www.youtube.com/embed/a4jDXvC9nYM?enablejsapi=1&amp;playsinline=1&amp;rel=0"
+       src="https://www.youtube.com/embed/LodqjGu_BLw?enablejsapi=1&amp;playsinline=1&amp;rel=0"
        title="India Mission video player"
        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
        allowfullscreen>
@@ -264,6 +267,7 @@
    const translations = {
      nav_home: { en: 'Home', jp: 'ホーム' },
      nav_about: { en: 'About', jp: 'について' },
+     nav_photography: { en: 'Photography', jp: '写真' },
      nav_videography: { en: 'Videography', jp: 'ビデオグラフィー' },
      nav_portfolio: { en: 'Portfolio', jp: 'ポートフォリオ' },
      page_eyebrow: { en: 'Selected films · 2025', jp: '厳選作品 · 2025' },

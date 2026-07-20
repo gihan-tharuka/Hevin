@@ -12,8 +12,9 @@
   <script src="https://cdn.tailwindcss.com">
   </script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&amp;display=swap" rel="stylesheet"/>
   <link href="nav.css" rel="stylesheet"/>
+  <link href="premium-pages.css" rel="stylesheet"/>
   <script src="site.js" defer></script>
   <style>
    .font-poppins {
@@ -44,15 +45,15 @@
     <a class="flex items-center space-x-3 font-semibold text-black bg-green-100 px-4 py-2 rounded-lg" href="about.html" data-i18n="nav_about">
      <i class="fas fa-info-circle text-green-500"></i><span>About</span>
     </a>
+    <a class="flex items-center space-x-3 text-gray-500 px-4 py-2 rounded-lg transition-all duration-300" href="photography.html" data-i18n="nav_photography">
+     <i class="fas fa-camera"></i><span>Photography</span>
+    </a>
     <a class="flex items-center space-x-3 text-gray-500 hover:bg-amber-100 hover:text-amber-700 px-4 py-2 rounded-lg transition-all duration-300" href="videography.html" data-i18n="nav_videography">
      <i class="fas fa-video text-amber-500"></i><span>Videography</span>
     </a>
     <!-- <a class="text-gray-500" href="services.html" data-i18n="nav_service">
      Service
     </a> -->
-    <a class="flex items-center space-x-3 text-gray-500 hover:bg-purple-100 hover:text-purple-700 px-4 py-2 rounded-lg transition-all duration-300" href="portfolio.html" data-i18n="nav_portfolio">
-     <i class="fas fa-briefcase text-purple-500"></i><span>Portfolio</span>
-    </a>
     <!-- <a class="flex items-center space-x-3 text-gray-500 hover:bg-yellow-100 hover:text-yellow-700 px-4 py-2 rounded-lg transition-all duration-300" href="#" data-i18n="nav_news">
      <i class="fas fa-newspaper text-yellow-500"></i><span>News</span>
     </a> -->
@@ -68,30 +69,57 @@
     </p>
    </div>
   </aside>
-  <main class="flex-1 overflow-y-auto sm:ml-72 py-4 sm:py-10">
-   <div class="bg-gradient-to-br from-white to-gray-50 shadow-lg rounded-3xl p-8 sm:p-12 mb-8 mx-6 sm:mx-10">
-    <div class="flex flex-col lg:flex-row items-center lg:items-start space-y-8 lg:space-y-0 lg:space-x-12 max-w-6xl mx-auto">
-     <div class="flex flex-col space-y-4">
-      <img alt="About Image 1" class="w-full h-64 object-cover rounded-xl shadow-xl transform hover:scale-105 transition-transform duration-300" src="img/about1.png"/>
-      <img alt="About Image 2" class="w-full h-64 object-cover rounded-xl shadow-xl transform hover:scale-105 transition-transform duration-300" src="img/about2.png"/>
-     </div>
-     <div class="max-w-lg text-center lg:text-left w-full lg:ml-8">
-      <h2 class="font-poppins font-extrabold text-4xl lg:text-5xl text-black mb-6 leading-tight" data-i18n="about_title">
-       About Me
-      </h2>
-      <blockquote class="text-gray-600 italic mb-6 border-l-4 border-black pl-6">
-       "Capturing moments, creating memories – one frame at a time."
-      </blockquote>
-      <p class="text-gray-600 mb-4 leading-relaxed text-lg" data-i18n="about_desc1">
-       Hi, I'm Hevin Randika, a dedicated videographer and photographer passionate about capturing life's most meaningful moments. With years of experience in visual storytelling, I specialize in transforming ideas into compelling narratives that resonate with audiences. From promotional videos to documentaries, I believe in the power of film to connect people and share authentic stories.
-      </p>
-      <p class="text-gray-600 mb-8 leading-relaxed text-lg" data-i18n="about_desc2">
-       My journey into videography and photography began with a love for creativity and technology. I've worked on diverse projects, from corporate promotions to personal documentaries, always striving to blend artistic vision with technical excellence. When not behind the camera, you'll find me exploring new editing techniques and staying current with industry trends.
-      </p>
+  <main class="premium-page flex-1 sm:ml-72 min-h-screen">
+   <section class="premium-content px-6 py-16 sm:px-10 lg:px-16 lg:py-24">
+    <div class="max-w-6xl mx-auto">
+     <header class="grid lg:grid-cols-[0.8fr_1.2fr] gap-8 lg:gap-16 items-end mb-14 lg:mb-20">
+      <div>
+       <p class="premium-eyebrow mb-6">Behind the lens</p>
+       <h1 class="premium-display text-5xl sm:text-6xl font-bold text-gray-950 leading-tight" data-i18n="about_title">About Me</h1>
+      </div>
+      <blockquote class="text-2xl sm:text-3xl text-gray-600 font-light leading-snug border-l-2 border-amber-500 pl-6">“Capturing moments, creating memories—one frame at a time.”</blockquote>
+     </header>
+
+     <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-16 items-center">
+      <div class="relative pb-14 sm:pr-20">
+       <img alt="Hevin Randika working behind the camera" class="premium-photo w-full aspect-[4/5] object-cover rounded-[2rem]" src="img/about1.png"/>
+       <img alt="A moment from Hevin Randika's creative work" class="premium-photo absolute bottom-0 right-0 w-2/5 aspect-square object-cover rounded-2xl border-8 border-slate-50" src="img/about2.png"/>
+       <div class="absolute top-6 -left-3 sm:-left-6 bg-gray-950 text-white rounded-2xl px-5 py-4 shadow-xl">
+        <p class="text-[0.65rem] uppercase tracking-[0.25em] text-amber-300">Visual storytelling</p>
+       </div>
+      </div>
+
+      <div class="about-copy bg-white/90 backdrop-blur rounded-[2rem] border border-white p-7 sm:p-10 lg:p-12">
+       <p class="text-xs uppercase tracking-[0.28em] text-amber-600 font-bold mb-6">The story so far</p>
+       <p class="text-gray-600 leading-relaxed text-lg whitespace-pre-line" data-i18n="about_desc1">Hello I’m Hevin. I believe every person, brand &amp; business has a story worth telling. My approach is rooted in craftsmanship, creating films and photographs that communicate with intention, reflect authentic stories, and connect with people. I value collaboration and enjoy working with artists, artisans, brands, and creative teams to turn ideas into timeless visual work.</p>
+       <a href="videography.html" class="inline-flex items-center gap-3 mt-8 text-sm uppercase tracking-[0.18em] text-gray-900 font-semibold hover:text-amber-700 transition"><span>View selected films</span><i class="fas fa-arrow-right text-xs"></i></a>
+       <div class="grid gap-3 mt-9 pt-8 border-t border-gray-200">
+        <a href="https://www.instagram.com/hevinperiyapperuma" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-4 p-4 rounded-2xl bg-gray-50 hover:bg-amber-50 transition-colors">
+         <span class="flex items-center justify-center w-11 h-11 rounded-xl bg-white text-gray-700 shadow-sm group-hover:text-amber-700"><i class="fab fa-instagram"></i></span>
+         <span class="min-w-0">
+          <span class="block text-xs uppercase tracking-[0.18em] text-gray-400 font-semibold" data-i18n="about_instagram">Instagram</span>
+          <span class="block text-gray-800 font-medium truncate">@hevinperiyapperuma</span>
+         </span>
+        </a>
+        <a href="tel:+818058327913" class="group flex items-center gap-4 p-4 rounded-2xl bg-gray-50 hover:bg-amber-50 transition-colors">
+         <span class="flex items-center justify-center w-11 h-11 rounded-xl bg-white text-gray-700 shadow-sm group-hover:text-amber-700"><i class="fas fa-phone-alt"></i></span>
+         <span>
+          <span class="block text-xs uppercase tracking-[0.18em] text-gray-400 font-semibold" data-i18n="about_mobile">Mobile</span>
+          <span class="block text-gray-800 font-medium">+81 80 5832 7913</span>
+         </span>
+        </a>
+        <a href="mailto:hevinperiyapperuma@gmail.com" class="group flex items-center gap-4 p-4 rounded-2xl bg-gray-50 hover:bg-amber-50 transition-colors">
+         <span class="flex items-center justify-center w-11 h-11 rounded-xl bg-white text-gray-700 shadow-sm group-hover:text-amber-700"><i class="far fa-envelope"></i></span>
+         <span class="min-w-0">
+          <span class="block text-xs uppercase tracking-[0.18em] text-gray-400 font-semibold" data-i18n="about_email">Email</span>
+          <span class="block text-sm sm:text-base text-gray-800 font-medium break-all">hevinperiyapperuma@gmail.com</span>
+         </span>
+        </a>
+       </div>
+      </div>
      </div>
     </div>
-   </div>
-
+   </section>
   </main>
   <footer class="sm:hidden bg-white border-t border-gray-300 text-center py-4 text-xs text-gray-400">
    © <span data-current-year></span> Hevinly | Developed by
@@ -128,6 +156,7 @@
     const translations = {
       nav_home: { en: 'Home', jp: 'ホーム' },
       nav_about: { en: 'About', jp: 'について' },
+      nav_photography: { en: 'Photography', jp: '写真' },
       nav_videography: { en: 'Videography', jp: 'ビデオグラフィー' },
       nav_skills: { en: 'Skills', jp: 'スキル' },
       nav_service: { en: 'Service', jp: 'サービス' },
@@ -135,10 +164,11 @@
       nav_news: { en: 'News', jp: 'ニュース' },
       nav_contact: { en: 'Contact', jp: 'お問い合わせ' },
       about_title: { en: 'About Me', jp: '私について' },
-      about_desc1: { en: 'Hi, I\'m Hevin Randika, a dedicated videographer and photographer passionate about capturing life\'s most meaningful moments. With years of experience in visual storytelling, I specialize in transforming ideas into compelling narratives that resonate with audiences. From promotional videos to documentaries, I believe in the power of film to connect people and share authentic stories.',
-        jp: 'こんにちは、私はヘビン・ランディカです。ビデオグラファーとフォトグラファーとして、人生で最も意味のある瞬間を捉えることに情熱を注いでいます。ビジュアルストーリーテリングの豊富な経験を持ち、オーディエンスに響く魅力的な物語にアイデアを変えることを専門としています。プロモーショナルビデオからドキュメンタリーまで、映画の力が人々をつなぎ、本物の物語を共有するという信念を持っています。' },
-      about_desc2: { en: 'My journey into videography and photography began with a love for creativity and technology. I\'ve worked on diverse projects, from corporate promotions to personal documentaries, always striving to blend artistic vision with technical excellence. When not behind the camera, you\'ll find me exploring new editing techniques and staying current with industry trends.',
-        jp: 'ビデオグラファーとフォトグラフィーの旅は、創造性と技術への情熱から始まりました。私は企業プロモーションから個人ドキュメンタリーまで、多様なプロジェクトに取り組んでいます。常に芸術的なビジョンと技術的な卓越性を組み合わせるよう努めています。カメラの後ろにいないとき、私は新しい編集テクニックを探求し、業界トレンドを最新の状態に保っています。' }
+      about_instagram: { en: 'Instagram', jp: 'インスタグラム' },
+      about_mobile: { en: 'Mobile', jp: '携帯電話' },
+      about_email: { en: 'Email', jp: 'メール' },
+      about_desc1: { en: 'Hello I’m Hevin. I believe every person, brand & business has a story worth telling. My approach is rooted in craftsmanship, creating films and photographs that communicate with intention, reflect authentic stories, and connect with people. I value collaboration and enjoy working with artists, artisans, brands, and creative teams to turn ideas into timeless visual work.',
+        jp: 'こんにちは、Hevinです。\n\n私は、一人ひとりの人、すべてのブランド、そしてあらゆるビジネスには、伝えるべき物語があると信じています。ものづくりへのこだわりを大切にし、意図を持った映像と写真を通して、本質的なストーリーを描き、人と人とのつながりを生み出すことを目指しています。アーティストや職人、ブランド、そしてクリエイティブチームとの出会いや共創を大切にし、一つひとつのアイデアを、時を超えて価値を持ち続けるビジュアル作品へと丁寧に形にしていきます。' }
     };
 
     async function loadLang() {
