@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="A cinematic selection of commercial and documentary films by Hevin Randika." name="description"/>
+  <title>Videography | Hevinly</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+  <link href="nav.css" rel="stylesheet"/>
+  <script src="site.js" defer></script>
+  <style>
+   html {
+     scroll-behavior: smooth;
+   }
+
+   body {
+     font-family: "Inter", sans-serif;
+   }
+
+   .font-poppins {
+     font-family: "Poppins", sans-serif;
+     letter-spacing: 0.15em;
+   }
+
+   .cinematic-main {
+     background:
+       radial-gradient(circle at 75% 8%, rgba(245, 158, 11, 0.1), transparent 28rem),
+       radial-gradient(circle at 18% 75%, rgba(148, 163, 184, 0.12), transparent 32rem),
+       #f8fafc;
+   }
+
+   .film-frame {
+     box-shadow: 0 28px 70px rgba(15, 23, 42, 0.18);
+   }
+
+   .film-frame::after {
+     content: "";
+     position: absolute;
+     inset: 0;
+     border: 1px solid rgba(15, 23, 42, 0.12);
+     border-radius: inherit;
+     pointer-events: none;
+   }
+
+   [data-reveal].reveal-pending {
+     opacity: 0;
+     transform: translateY(28px);
+   }
+
+   [data-reveal] {
+     transition: opacity 800ms ease, transform 800ms ease;
+   }
+
+   @media (max-width: 639px) {
+     body,
+     aside,
+     .cinematic-main {
+       width: 100vw;
+       max-width: 100vw;
+     }
+   }
+
+   @media (min-width: 640px) {
+     .cinematic-main {
+       height: 100vh;
+       overflow-y: auto;
+       scroll-snap-type: y proximity;
+     }
+
+     .film-section {
+       scroll-snap-align: start;
+     }
+   }
+
+   @media (prefers-reduced-motion: reduce) {
+     html {
+       scroll-behavior: auto;
+     }
+
+     [data-reveal] {
+       opacity: 1 !important;
+       transform: none !important;
+       transition: none;
+     }
+   }
+  </style>
+ </head>
+ <body class="bg-slate-50 min-h-screen flex flex-col sm:flex-row overflow-x-hidden">
+  <aside class="w-full min-w-0 sm:w-72 sm:fixed sm:top-0 sm:left-0 sm:h-screen bg-gradient-to-b from-white via-gray-50 to-gray-100 border-b border-gray-300 sm:border-b-0 sm:border-r flex flex-col justify-between px-6 py-2 sm:px-8 sm:py-16 z-20 shadow-lg">
+   <div class="flex items-center justify-between sm:flex sm:flex-col sm:items-center">
+    <a href="index.html">
+     <h1 class="font-poppins font-extrabold text-3xl mb-0 sm:mb-6 text-black tracking-widest text-center mt-2">
+      Hevinly
+     </h1>
+    </a>
+    <div class="flex items-center space-x-6">
+     <button class="lang-toggle sm:hidden text-xs text-black hover:bg-gray-100 px-3 py-1 rounded-md border border-gray-300 transition" aria-label="Language toggle">EN / JP</button>
+     <button id="menu-btn" aria-label="Toggle menu" aria-expanded="false" class="sm:hidden text-black focus:outline-none">
+      <i id="menu-icon" class="fas fa-bars fa-lg"></i>
+     </button>
+    </div>
+   </div>
+   <nav id="menu" class="hidden flex-col space-y-4 text-sm mt-6 sm:flex sm:mt-0 sm:items-center items-center">
+    <a class="flex items-center space-x-3 text-gray-500 hover:bg-blue-100 hover:text-blue-700 px-4 py-2 rounded-lg transition-all duration-300" href="index.html">
+     <i class="fas fa-home text-blue-500"></i><span data-i18n="nav_home">Home</span>
+    </a>
+    <a class="flex items-center space-x-3 text-gray-500 hover:bg-green-100 hover:text-green-700 px-4 py-2 rounded-lg transition-all duration-300" href="about.html">
+     <i class="fas fa-info-circle text-green-500"></i><span data-i18n="nav_about">About</span>
+    </a>
+    <a aria-current="page" class="flex items-center space-x-3 font-semibold text-black bg-amber-100 px-4 py-2 rounded-lg" href="videography.html">
+     <i class="fas fa-video text-amber-600"></i><span data-i18n="nav_videography">Videography</span>
+    </a>
+    <a class="flex items-center space-x-3 text-gray-500 hover:bg-purple-100 hover:text-purple-700 px-4 py-2 rounded-lg transition-all duration-300" href="portfolio.html">
+     <i class="fas fa-briefcase text-purple-500"></i><span data-i18n="nav_portfolio">Portfolio</span>
+    </a>
+   </nav>
+   <div class="text-xs text-gray-400 leading-relaxed mt-6 sm:mt-0 sm:text-center text-center">
+    <button class="lang-toggle hidden sm:inline-flex items-center justify-center mx-auto text-xs text-black px-4 py-2 mb-4 border border-gray-200 transition" aria-label="Language toggle">EN / JP</button>
+    <p class="hidden sm:block">© <span data-current-year></span> Hevinly</p>
+    <p class="hidden sm:block">
+     Developed by
+     <a class="text-gray-600 font-semibold hover:underline" href="https://www.brandgradestudio.com/" target="_blank" rel="noopener noreferrer">Brandgrade Studio</a>
+    </p>
+   </div>
+  </aside>
+
+  <main id="cinematic-main" class="cinematic-main flex-1 min-w-0 w-full sm:w-auto sm:ml-72 text-gray-900 overflow-x-hidden">
+   <header class="min-h-[58vh] flex items-end px-6 sm:px-10 lg:px-16 pb-16 pt-20 sm:pt-24">
+    <div class="max-w-6xl w-full mx-auto" data-reveal>
+     <div class="flex items-center gap-4 mb-6">
+      <span class="block w-12 h-px bg-amber-500"></span>
+      <p class="text-xs sm:text-sm uppercase tracking-[0.35em] text-amber-600" data-i18n="page_eyebrow">Selected films · 2025</p>
+     </div>
+     <h1 class="font-poppins text-4xl sm:text-6xl lg:text-7xl leading-tight max-w-5xl" data-i18n="page_title">Stories in Motion</h1>
+     <p class="mt-7 text-base sm:text-xl text-gray-600 font-light leading-relaxed max-w-2xl" data-i18n="page_intro">
+      Commercial energy and intimate documentary storytelling, crafted one deliberate frame at a time.
+     </p>
+     <a href="#abc-pop" class="inline-flex items-center gap-3 mt-10 text-sm uppercase tracking-[0.24em] text-gray-700 hover:text-amber-600 transition-colors">
+      <span data-i18n="explore_work">Explore the work</span>
+      <i class="fas fa-arrow-down text-xs" aria-hidden="true"></i>
+     </a>
+    </div>
+   </header>
+
+   <section id="abc-pop" class="film-section min-h-screen flex items-center px-6 sm:px-10 lg:px-16 py-16 sm:py-20 border-t border-gray-200">
+    <article class="max-w-6xl w-full mx-auto" data-reveal>
+     <div class="grid lg:grid-cols-[minmax(0,1fr)_14rem] gap-8 lg:gap-12 items-end mb-8">
+      <div>
+       <p class="text-xs uppercase tracking-[0.32em] text-amber-600 mb-4" data-i18n="abc_meta">01 · Commercial · ABC Pop</p>
+       <h2 class="text-3xl sm:text-5xl font-medium tracking-tight leading-tight" data-i18n="abc_title">ABC Pop Phonics Commercial</h2>
+      </div>
+      <p class="text-sm sm:text-base text-gray-600 leading-relaxed lg:text-right" data-i18n="abc_desc">
+       A fun and educational commercial highlighting phonics learning through ABC Pop.
+      </p>
+     </div>
+     <div class="film-frame relative overflow-hidden rounded-2xl sm:rounded-3xl bg-black aspect-video">
+      <iframe
+       id="abc-player"
+       class="absolute inset-0 w-full h-full"
+       src="https://www.youtube.com/embed/IyWJM6X0yUw?enablejsapi=1&amp;playsinline=1&amp;rel=0"
+       title="ABC Pop Phonics Commercial video player"
+       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+       allowfullscreen>
+      </iframe>
+     </div>
+     <p class="mt-5 flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-gray-500">
+      <i class="fas fa-volume-mute" aria-hidden="true"></i>
+      <span data-i18n="autoplay_note">Plays muted when in view</span>
+     </p>
+    </article>
+   </section>
+
+   <section id="catch-fire-project" class="film-section min-h-screen flex items-center px-6 sm:px-10 lg:px-16 py-16 sm:py-20 border-t border-gray-200">
+    <article class="max-w-6xl w-full mx-auto" data-reveal>
+     <div class="grid lg:grid-cols-[14rem_minmax(0,1fr)] gap-8 lg:gap-12 items-end mb-8">
+      <p class="text-sm sm:text-base text-gray-600 leading-relaxed order-2 lg:order-1" data-i18n="catch_desc">
+       A reflective documentary about faith, dreaming, and a Father's enduring influence.
+      </p>
+      <div class="order-1 lg:order-2 lg:text-right">
+       <p class="text-xs uppercase tracking-[0.32em] text-amber-600 mb-4" data-i18n="catch_meta">02 · Documentary · January 5, 2025</p>
+       <h2 class="text-3xl sm:text-5xl font-medium tracking-tight leading-tight" data-i18n="catch_title">Catch the Fire of Dreaming with the Father</h2>
+      </div>
+     </div>
+     <div class="film-frame relative overflow-hidden rounded-2xl sm:rounded-3xl bg-black aspect-video">
+      <iframe
+       id="youtube-player"
+       class="absolute inset-0 w-full h-full"
+       src="https://www.youtube.com/embed/VSRgU5rppTQ?enablejsapi=1&amp;playsinline=1&amp;rel=0"
+       title="Catch the Fire of Dreaming with the Father video player"
+       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+       allowfullscreen>
+      </iframe>
+     </div>
+     <p class="mt-5 flex items-center justify-start lg:justify-end gap-2 text-xs uppercase tracking-[0.2em] text-gray-500">
+      <i class="fas fa-volume-mute" aria-hidden="true"></i>
+      <span data-i18n="autoplay_note">Plays muted when in view</span>
+     </p>
+    </article>
+   </section>
+
+   <section id="india-mission" class="film-section min-h-screen flex items-center px-6 sm:px-10 lg:px-16 py-16 sm:py-20 border-t border-gray-200">
+    <article class="max-w-6xl w-full mx-auto" data-reveal>
+     <div class="grid lg:grid-cols-[minmax(0,1fr)_14rem] gap-8 lg:gap-12 items-end mb-8">
+      <div>
+       <p class="text-xs uppercase tracking-[0.32em] text-amber-600 mb-4" data-i18n="india_meta">03 · Documentary · September 26, 2025</p>
+       <h2 class="text-3xl sm:text-5xl font-medium tracking-tight leading-tight" data-i18n="india_title">India Mission</h2>
+      </div>
+      <p class="text-sm sm:text-base text-gray-600 leading-relaxed lg:text-right" data-i18n="india_desc">
+       A mission documentary capturing moments of faith, community, and service across India.
+      </p>
+     </div>
+     <div class="film-frame relative overflow-hidden rounded-2xl sm:rounded-3xl bg-black aspect-video">
+      <iframe
+       id="india-mission-player"
+       class="absolute inset-0 w-full h-full"
+       src="https://www.youtube.com/embed/a4jDXvC9nYM?enablejsapi=1&amp;playsinline=1&amp;rel=0"
+       title="India Mission video player"
+       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+       allowfullscreen>
+      </iframe>
+     </div>
+     <p class="mt-5 flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-gray-500">
+      <i class="fas fa-volume-mute" aria-hidden="true"></i>
+      <span data-i18n="autoplay_note">Plays muted when in view</span>
+     </p>
+    </article>
+   </section>
+
+   <div class="px-6 sm:px-10 lg:px-16 py-12 border-t border-gray-200">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
+     <p class="text-gray-500 text-sm" data-i18n="closing_line">More stories are always in the making.</p>
+     <a href="portfolio.html" class="inline-flex items-center gap-3 text-sm uppercase tracking-[0.2em] text-black hover:text-amber-700 transition-colors">
+      <span data-i18n="view_portfolio">View full portfolio</span>
+      <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
+     </a>
+    </div>
+   </div>
+  </main>
+
+  <footer class="sm:hidden bg-white border-t border-gray-200 text-center py-5 text-xs text-gray-500">
+   © <span data-current-year></span> Hevinly | Developed by
+   <a class="text-gray-700 font-semibold hover:underline" href="https://www.brandgradestudio.com/" target="_blank" rel="noopener noreferrer">Brandgrade Studio</a>
+  </footer>
+
+  <script>
+   const btn = document.getElementById('menu-btn');
+   const menu = document.getElementById('menu');
+   const icon = document.getElementById('menu-icon');
+
+   btn.addEventListener('click', () => {
+     const isOpen = menu.classList.toggle('hidden') === false;
+     menu.classList.toggle('flex', isOpen);
+     btn.setAttribute('aria-expanded', String(isOpen));
+     icon.classList.toggle('fa-bars', !isOpen);
+     icon.classList.toggle('fa-times', isOpen);
+   });
+
+   const translations = {
+     nav_home: { en: 'Home', jp: 'ホーム' },
+     nav_about: { en: 'About', jp: 'について' },
+     nav_videography: { en: 'Videography', jp: 'ビデオグラフィー' },
+     nav_portfolio: { en: 'Portfolio', jp: 'ポートフォリオ' },
+     page_eyebrow: { en: 'Selected films · 2025', jp: '厳選作品 · 2025' },
+     page_title: { en: 'Stories in Motion', jp: '映像で紡ぐ物語' },
+     page_intro: {
+       en: 'Commercial energy and intimate documentary storytelling, crafted one deliberate frame at a time.',
+       jp: '躍動感あふれるコマーシャルと心に寄り添うドキュメンタリーを、一つひとつのフレームに想いを込めて制作します。'
+     },
+     explore_work: { en: 'Explore the work', jp: '作品を見る' },
+     abc_meta: { en: '01 · Commercial · ABC Pop', jp: '01 · コマーシャル · ABC Pop' },
+     abc_title: { en: 'ABC Pop Phonics Commercial', jp: 'ABC Pop フォニックス・コマーシャル' },
+     abc_desc: {
+       en: 'A fun and educational commercial highlighting phonics learning through ABC Pop.',
+       jp: 'ABC Popを通じたフォニックス学習の魅力を、楽しく教育的に表現したコマーシャルです。'
+     },
+     catch_meta: { en: '02 · Documentary · January 5, 2025', jp: '02 · ドキュメンタリー · 2025年1月5日' },
+     catch_title: { en: 'Catch the Fire of Dreaming with the Father', jp: '父と共に夢見る炎をつかむ' },
+     catch_desc: {
+       en: "A reflective documentary about faith, dreaming, and a Father's enduring influence.",
+       jp: '信仰、夢、そして父から受け継がれる影響を見つめるドキュメンタリーです。'
+     },
+     india_meta: { en: '03 · Documentary · September 26, 2025', jp: '03 · ドキュメンタリー · 2025年9月26日' },
+     india_title: { en: 'India Mission', jp: 'インド・ミッション' },
+     india_desc: {
+       en: 'A mission documentary capturing moments of faith, community, and service across India.',
+       jp: 'インド各地での信仰、コミュニティ、奉仕の瞬間を記録したミッション・ドキュメンタリーです。'
+     },
+     autoplay_note: { en: 'Plays muted when in view', jp: '表示中はミュートで自動再生' },
+     closing_line: { en: 'More stories are always in the making.', jp: '新しい物語を、これからも映像に。' },
+     view_portfolio: { en: 'View full portfolio', jp: '全ポートフォリオを見る' }
+   };
+
+   function setLang(lang) {
+     localStorage.setItem('lang', lang);
+     document.documentElement.lang = lang === 'jp' ? 'ja' : 'en';
+     document.querySelectorAll('[data-i18n]').forEach(element => {
+       const translation = translations[element.dataset.i18n];
+       if (translation) element.innerText = translation[lang];
+     });
+     document.querySelectorAll('.lang-toggle').forEach(toggle => {
+       toggle.innerText = lang === 'en' ? 'EN / JP' : 'JP / EN';
+     });
+   }
+
+   document.querySelectorAll('.lang-toggle').forEach(toggle => {
+     toggle.addEventListener('click', () => {
+       const current = localStorage.getItem('lang') || 'en';
+       setLang(current === 'en' ? 'jp' : 'en');
+     });
+   });
+
+   document.querySelectorAll('[data-reveal]').forEach(element => {
+     element.classList.add('reveal-pending');
+   });
+
+   const revealObserver = new IntersectionObserver(entries => {
+     entries.forEach(entry => {
+       if (entry.isIntersecting) {
+         entry.target.classList.remove('reveal-pending');
+         revealObserver.unobserve(entry.target);
+       }
+     });
+   }, { threshold: 0.18 });
+
+   document.querySelectorAll('[data-reveal]').forEach(element => revealObserver.observe(element));
+
+   const videoStates = [
+     {
+       playerId: 'abc-player',
+       sectionId: 'abc-pop',
+       title: 'ABC Pop Phonics Commercial video player',
+       player: null,
+       ready: false,
+       inView: false
+     },
+     {
+       playerId: 'youtube-player',
+       sectionId: 'catch-fire-project',
+       title: 'Catch the Fire of Dreaming with the Father video player',
+       player: null,
+       ready: false,
+       inView: false
+     },
+     {
+       playerId: 'india-mission-player',
+       sectionId: 'india-mission',
+       title: 'India Mission video player',
+       player: null,
+       ready: false,
+       inView: false
+     }
+   ];
+
+   function syncPlayback(video) {
+     if (!video.ready || !video.player) return;
+     if (video.inView) {
+       video.player.mute();
+       video.player.playVideo();
+     } else {
+       video.player.pauseVideo();
+     }
+   }
+
+   window.onYouTubeIframeAPIReady = function() {
+     videoStates.forEach(video => {
+       video.player = new YT.Player(video.playerId, {
+         events: {
+           onReady: event => {
+             video.ready = true;
+             event.target.mute();
+             event.target.getIframe().setAttribute('title', video.title);
+             syncPlayback(video);
+           }
+         }
+       });
+     });
+   };
+
+   videoStates.forEach(video => {
+     const playbackObserver = new IntersectionObserver(entries => {
+       entries.forEach(entry => {
+         video.inView = entry.isIntersecting && entry.intersectionRatio >= 0.55;
+         syncPlayback(video);
+       });
+     }, { threshold: [0, 0.55, 0.8] });
+
+     playbackObserver.observe(document.getElementById(video.sectionId));
+   });
+
+   const youtubeApiScript = document.createElement('script');
+   youtubeApiScript.src = 'https://www.youtube.com/iframe_api';
+   document.head.appendChild(youtubeApiScript);
+
+   setLang(localStorage.getItem('lang') || 'en');
+  </script>
+ </body>
+</html>

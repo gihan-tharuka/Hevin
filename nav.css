@@ -1,0 +1,169 @@
+body > aside {
+  background: rgba(255, 255, 255, 0.94) !important;
+  border-color: #e5e7eb !important;
+  box-shadow: 12px 0 40px rgba(15, 23, 42, 0.055) !important;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+body > aside > div:first-child > a {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+body > aside h1 {
+  margin: 0 !important;
+  font-size: 1.65rem !important;
+  line-height: 1.15 !important;
+  letter-spacing: 0.12em !important;
+}
+
+body > aside h1::after {
+  content: "VISUAL STORYTELLER";
+  display: block;
+  margin-top: 0.65rem;
+  color: #9ca3af;
+  font-family: Arial, sans-serif;
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+}
+
+body > aside nav#menu {
+  align-items: stretch !important;
+  width: 100%;
+  gap: 0.45rem !important;
+}
+
+body > aside nav#menu > a {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 3rem;
+  gap: 0.8rem;
+  padding: 0.7rem 0.85rem !important;
+  border-radius: 0.9rem !important;
+  color: #6b7280 !important;
+  background: transparent !important;
+  font-weight: 500;
+  transition: color 180ms ease, background 180ms ease, transform 180ms ease, box-shadow 180ms ease !important;
+}
+
+body > aside nav#menu > a i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  flex: 0 0 2rem;
+  border-radius: 0.65rem;
+  color: #6b7280 !important;
+  background: #f3f4f6;
+  transition: color 180ms ease, background 180ms ease;
+}
+
+body > aside nav#menu > a:hover {
+  color: #111827 !important;
+  background: #f3f4f6 !important;
+  transform: translateX(3px);
+}
+
+body > aside nav#menu > a:hover i {
+  color: #111827 !important;
+  background: #fff;
+}
+
+body > aside nav#menu > a.font-semibold,
+body > aside nav#menu > a[aria-current="page"] {
+  color: #fff !important;
+  background: #111827 !important;
+  box-shadow: 0 12px 28px rgba(17, 24, 39, 0.18) !important;
+}
+
+body > aside nav#menu > a.font-semibold i,
+body > aside nav#menu > a[aria-current="page"] i {
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+body > aside > div:last-child {
+  padding-top: 1.25rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+body > aside .lang-toggle,
+body > aside #lang-toggle {
+  min-width: 4.75rem;
+  border-color: #e5e7eb !important;
+  border-radius: 999px !important;
+  background: #fff;
+  color: #374151;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  white-space: nowrap;
+  transition: color 180ms ease, background 180ms ease, border-color 180ms ease;
+}
+
+body > aside .lang-toggle:hover,
+body > aside #lang-toggle:hover {
+  color: #111827;
+  background: #f3f4f6;
+  border-color: #d1d5db !important;
+}
+
+body > aside #menu-btn {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.75rem;
+  background: #f3f4f6;
+  transition: background 180ms ease;
+}
+
+body > aside #menu-btn:hover {
+  background: #e5e7eb;
+}
+
+@media (min-width: 640px) {
+  body > aside {
+    padding: 3rem 1.5rem !important;
+  }
+
+  body > aside > div:first-child {
+    align-items: center !important;
+  }
+
+  body > aside nav#menu {
+    margin-top: 3.5rem !important;
+  }
+}
+
+@media (max-width: 639px) {
+  body > aside {
+    position: sticky;
+    top: 0;
+    padding: 0.85rem 1.25rem !important;
+    z-index: 50 !important;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08) !important;
+  }
+
+  body > aside h1::after {
+    display: none;
+  }
+
+  body > aside nav#menu {
+    margin-top: 0.9rem !important;
+    padding-top: 0.75rem;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  body > aside nav#menu > a:hover {
+    transform: none;
+  }
+
+  body > aside > div:last-child {
+    display: none;
+  }
+}
