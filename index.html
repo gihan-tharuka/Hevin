@@ -28,11 +28,11 @@
    <div class="flex items-center justify-between sm:flex sm:flex-col sm:items-center">
     <a href="index.html">
       <h1 class="font-poppins font-extrabold text-3xl mb-0 sm:mb-6 text-black tracking-widest text-center sm:text-center mt-2">
-        Hevinly
+        <span class="brand-first">Hevin</span><span class="brand-last">Randika</span>
       </h1>
     </a>
     <div class="flex items-center space-x-6">
-      <button class="lang-toggle sm:hidden text-xs text-black hover:bg-gray-100 px-3 py-1 rounded-md border border-gray-300 transition" aria-label="Language toggle">EN / JP</button>
+      <button class="lang-toggle sm:hidden text-xs text-black hover:bg-gray-100 px-3 py-1 rounded-md border border-gray-300 transition" aria-label="English selected. Switch to Japanese"><span class="lang-option is-active" data-lang="en" aria-current="true">EN</span><span class="lang-option" data-lang="jp" aria-current="false">JP</span></button>
       <button id="menu-btn" aria-label="Toggle menu" class="sm:hidden text-black focus:outline-none">
        <i id="menu-icon" class="fas fa-bars fa-lg"></i>
       </button>
@@ -59,7 +59,7 @@
     </a> -->
    </nav>
    <div class="text-xs text-gray-400 leading-relaxed mt-6 sm:mt-0 sm:text-center text-center">
-    <button class="lang-toggle hidden sm:inline-flex items-center justify-center mx-auto text-xs text-black px-4 py-2 mb-4 border border-gray-200 transition" aria-label="Language toggle">EN / JP</button>
+    <button class="lang-toggle hidden sm:inline-flex items-center justify-center mx-auto text-xs text-black px-4 py-2 mb-4 border border-gray-200 transition" aria-label="English selected. Switch to Japanese"><span class="lang-option is-active" data-lang="en" aria-current="true">EN</span><span class="lang-option" data-lang="jp" aria-current="false">JP</span></button>
     <p class="hidden sm:block">
      © <span data-current-year></span> Hevinly
     </p>
@@ -69,31 +69,15 @@
     </p>
    </div>
   </aside>
-  <main class="premium-page flex-1 sm:ml-72 min-h-screen">
-   <section class="premium-content min-h-screen flex items-center px-6 py-16 sm:px-10 lg:px-16">
-    <div class="max-w-6xl mx-auto w-full grid lg:grid-cols-[1.08fr_0.92fr] gap-14 lg:gap-20 items-center">
-     <div class="text-center lg:text-left">
-      <p class="premium-eyebrow justify-center lg:justify-start mb-7">Independent visual storyteller</p>
-      <h1 class="premium-display text-5xl sm:text-6xl xl:text-7xl font-bold text-gray-950 leading-[1.05] mb-5" data-i18n="hero_name">Hevin Randika</h1>
-      <h2 class="text-xl sm:text-2xl text-gray-500 font-light tracking-wide mb-7">Videographer <span class="text-amber-500">&amp;</span> Photographer</h2>
-      <p class="text-gray-600 max-w-xl leading-relaxed text-lg mx-auto lg:mx-0 mb-9" data-i18n="hero_desc">I am a passionate videographer dedicated to capturing moments and telling compelling stories through film. Exploring the art of visual storytelling to bring ideas to life.</p>
-      <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-3 mb-9">
-       <a href="videography.html" class="inline-flex items-center justify-center gap-3 bg-gray-950 text-white px-7 py-3.5 rounded-full font-semibold hover:bg-gray-800 transition shadow-lg"><span>Explore Films</span><i class="fas fa-arrow-right text-xs"></i></a>
-       <a href="contact.html" class="inline-flex items-center justify-center border border-gray-300 bg-white text-gray-900 px-7 py-3.5 rounded-full font-semibold hover:border-gray-500 transition" data-i18n="contact_me">Contact Me</a>
-      </div>
-      <div class="premium-social flex justify-center lg:justify-start gap-3">
-       <a aria-label="Instagram" title="Instagram" href="https://www.instagram.com/hevinperiyapperuma" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-       <a aria-label="Call +81 80 5832 7913" title="Mobile" href="tel:+818058327913"><i class="fas fa-phone-alt"></i></a>
-       <a aria-label="Email Hevin Randika" title="Email" href="mailto:hevinperiyapperuma@gmail.com"><i class="far fa-envelope"></i></a>
-      </div>
+  <main class="premium-page home-page flex-1 sm:ml-72 min-h-screen">
+   <section class="home-hero" aria-label="Portfolio home">
+    <img class="home-hero-image" src="img/about1.png" alt="Hevin Randika photographing food in a cafe" loading="eager" fetchpriority="high"/>
+    <div class="home-hero-content">
+     <div class="premium-social home-social flex gap-3">
+      <a aria-label="Instagram" title="Instagram" href="https://www.instagram.com/hevinperiyapperuma" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+      <a aria-label="Call +81 80 5832 7913" title="Mobile" href="tel:+818058327913"><i class="fas fa-phone-alt"></i></a>
+      <a aria-label="Email Hevin Randika" title="Email" href="mailto:hevinperiyapperuma@gmail.com"><i class="far fa-envelope"></i></a>
      </div>
-     <figure class="relative max-w-md mx-auto lg:max-w-none">
-      <div class="absolute -inset-5 sm:-inset-7 rounded-[2.5rem] bg-amber-100 rotate-3"></div>
-      <img alt="Portrait of Hevin Randika" class="premium-photo relative w-full aspect-[4/5] object-cover rounded-[2rem]" src="img/hevin.jpg"/>
-      <figcaption class="absolute -bottom-5 left-5 right-5 sm:left-auto sm:right-6 bg-white/95 backdrop-blur rounded-2xl px-5 py-4 shadow-xl border border-white">
-       <p class="text-[0.65rem] uppercase tracking-[0.24em] text-amber-600 font-bold">Film · Photo · Story</p>
-      </figcaption>
-     </figure>
     </div>
    </section>
   </main>
@@ -140,6 +124,7 @@
       nav_news: { en: 'News', jp: 'ニュース' },
       nav_contact: { en: 'Contact', jp: 'お問い合わせ' },
       hero_name: { en: 'Hevin Randika', jp: 'ヘビン・ランディカ' },
+      hero_role: { en: 'Videographer & Photographer', jp: '映像作家・写真家' },
       hero_desc: { en: 'I am a passionate videographer dedicated to capturing moments and telling compelling stories through film.',
         jp: '私は映画を通じて瞬間を捉え、感動的なストーリーを伝える情熱的なビデオグラファーです。' },
       contact_me: { en: 'Contact Me', jp: 'お問い合わせ' }
@@ -194,7 +179,7 @@
           img.alt = img.dataset.originalAlt;
         });
       }
-      document.querySelectorAll('.lang-toggle').forEach(btn => btn.innerText = lang === 'en' ? 'EN / JP' : 'JP / EN');
+      window.updateLanguageToggles?.(lang);
     }
 
     async function switchLang() {

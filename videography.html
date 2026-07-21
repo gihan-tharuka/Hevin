@@ -99,11 +99,11 @@
    <div class="flex items-center justify-between sm:flex sm:flex-col sm:items-center">
     <a href="index.html">
      <h1 class="font-poppins font-extrabold text-3xl mb-0 sm:mb-6 text-black tracking-widest text-center mt-2">
-      Hevinly
+      <span class="brand-first">Hevin</span><span class="brand-last">Randika</span>
      </h1>
     </a>
     <div class="flex items-center space-x-6">
-     <button class="lang-toggle sm:hidden text-xs text-black hover:bg-gray-100 px-3 py-1 rounded-md border border-gray-300 transition" aria-label="Language toggle">EN / JP</button>
+     <button class="lang-toggle sm:hidden text-xs text-black hover:bg-gray-100 px-3 py-1 rounded-md border border-gray-300 transition" aria-label="English selected. Switch to Japanese"><span class="lang-option is-active" data-lang="en" aria-current="true">EN</span><span class="lang-option" data-lang="jp" aria-current="false">JP</span></button>
      <button id="menu-btn" aria-label="Toggle menu" aria-expanded="false" class="sm:hidden text-black focus:outline-none">
       <i id="menu-icon" class="fas fa-bars fa-lg"></i>
      </button>
@@ -124,7 +124,7 @@
     </a>
    </nav>
    <div class="text-xs text-gray-400 leading-relaxed mt-6 sm:mt-0 sm:text-center text-center">
-    <button class="lang-toggle hidden sm:inline-flex items-center justify-center mx-auto text-xs text-black px-4 py-2 mb-4 border border-gray-200 transition" aria-label="Language toggle">EN / JP</button>
+    <button class="lang-toggle hidden sm:inline-flex items-center justify-center mx-auto text-xs text-black px-4 py-2 mb-4 border border-gray-200 transition" aria-label="English selected. Switch to Japanese"><span class="lang-option is-active" data-lang="en" aria-current="true">EN</span><span class="lang-option" data-lang="jp" aria-current="false">JP</span></button>
     <p class="hidden sm:block">© <span data-current-year></span> Hevinly</p>
     <p class="hidden sm:block">
      Developed by
@@ -307,9 +307,7 @@
        const translation = translations[element.dataset.i18n];
        if (translation) element.innerText = translation[lang];
      });
-     document.querySelectorAll('.lang-toggle').forEach(toggle => {
-       toggle.innerText = lang === 'en' ? 'EN / JP' : 'JP / EN';
-     });
+     window.updateLanguageToggles?.(lang);
    }
 
    document.querySelectorAll('.lang-toggle').forEach(toggle => {

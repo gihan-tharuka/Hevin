@@ -43,6 +43,11 @@ body > aside h1 {
   letter-spacing: 0.12em !important;
 }
 
+body > aside h1 .brand-first,
+body > aside h1 .brand-last {
+  display: block;
+}
+
 body > aside h1::after {
   content: "VISUAL STORYTELLER";
   display: block;
@@ -118,24 +123,50 @@ body > aside > div:last-child {
 
 body > aside .lang-toggle,
 body > aside #lang-toggle {
-  min-width: 4.75rem;
+  min-width: 5.35rem;
+  min-height: 2.35rem;
+  padding: 0.2rem !important;
   border-color: #e5e7eb !important;
   border-radius: 999px !important;
-  background: #fff;
+  background: rgba(243, 244, 246, 0.9);
   color: #374151;
   font-size: 0.7rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
   line-height: 1;
   white-space: nowrap;
-  transition: color 180ms ease, background 180ms ease, border-color 180ms ease;
+  box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.06);
+  transition: border-color 180ms ease, box-shadow 180ms ease;
 }
 
 body > aside .lang-toggle:hover,
 body > aside #lang-toggle:hover {
-  color: #111827;
-  background: #f3f4f6;
+  background: rgba(243, 244, 246, 0.9);
   border-color: #d1d5db !important;
+  box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.06), 0 6px 18px rgba(15, 23, 42, 0.08);
+}
+
+body > aside .lang-toggle:focus-visible,
+body > aside #lang-toggle:focus-visible {
+  outline: 2px solid #f59e0b;
+  outline-offset: 3px;
+}
+
+body > aside .lang-option {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.35rem;
+  height: 1.85rem;
+  border-radius: 999px;
+  color: #6b7280;
+  transition: color 180ms ease, background-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+body > aside .lang-option.is-active {
+  color: #fff;
+  background: #111827;
+  box-shadow: 0 5px 12px rgba(15, 23, 42, 0.22);
 }
 
 body > aside #menu-btn {
@@ -174,7 +205,21 @@ body > aside #menu-btn:hover {
     box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08) !important;
   }
 
+  body > aside > div:first-child > a {
+    flex: 1 1 auto;
+    width: auto;
+    text-align: left;
+  }
+
+  body > aside h1 {
+    text-align: left !important;
+  }
+
   body > aside h1::after {
+    display: none;
+  }
+
+  body > aside h1 .brand-last {
     display: none;
   }
 

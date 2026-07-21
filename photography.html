@@ -18,9 +18,9 @@
  <body class="bg-slate-50 min-h-screen flex flex-col sm:flex-row overflow-x-hidden">
   <aside class="w-full min-w-0 sm:w-72 sm:fixed sm:inset-y-0 sm:left-0 sm:h-screen bg-white border-b sm:border-b-0 sm:border-r flex flex-col justify-between px-6 py-2 sm:px-8 sm:py-16 z-20">
    <div class="flex items-center justify-between sm:flex sm:flex-col sm:items-center">
-    <a href="index.html"><h1 class="font-poppins font-extrabold text-3xl text-black text-center">Hevinly</h1></a>
+    <a href="index.html"><h1 class="font-poppins font-extrabold text-3xl text-black text-center"><span class="brand-first">Hevin</span><span class="brand-last">Randika</span></h1></a>
     <div class="flex items-center space-x-6">
-     <button class="lang-toggle sm:hidden text-xs text-black px-3 py-1 border" aria-label="Language toggle">EN / JP</button>
+     <button class="lang-toggle sm:hidden text-xs text-black px-3 py-1 border" aria-label="English selected. Switch to Japanese"><span class="lang-option is-active" data-lang="en" aria-current="true">EN</span><span class="lang-option" data-lang="jp" aria-current="false">JP</span></button>
      <button id="menu-btn" aria-label="Toggle menu" aria-expanded="false" class="sm:hidden text-black"><i id="menu-icon" class="fas fa-bars"></i></button>
     </div>
    </div>
@@ -31,7 +31,7 @@
     <a href="videography.html"><i class="fas fa-video"></i><span data-i18n="nav_videography">Motion Craft</span></a>
    </nav>
    <div class="text-xs text-gray-400 leading-relaxed text-center">
-    <button class="lang-toggle hidden sm:inline-flex items-center justify-center mx-auto text-xs text-black px-4 py-2 mb-4 border" aria-label="Language toggle">EN / JP</button>
+    <button class="lang-toggle hidden sm:inline-flex items-center justify-center mx-auto text-xs text-black px-4 py-2 mb-4 border" aria-label="English selected. Switch to Japanese"><span class="lang-option is-active" data-lang="en" aria-current="true">EN</span><span class="lang-option" data-lang="jp" aria-current="false">JP</span></button>
     <p class="hidden sm:block">© <span data-current-year></span> Hevinly</p>
     <p class="hidden sm:block">Developed by <a class="text-gray-600 font-semibold hover:underline" href="https://www.brandgradestudio.com/" target="_blank" rel="noopener noreferrer">Brandgrade Studio</a></p>
    </div>
@@ -98,7 +98,7 @@
    };
    const menuButton=document.getElementById('menu-btn'), menu=document.getElementById('menu'), menuIcon=document.getElementById('menu-icon');
    menuButton.addEventListener('click',()=>{const open=menu.classList.toggle('hidden')===false;menu.classList.toggle('flex',open);menuButton.setAttribute('aria-expanded',String(open));menuIcon.classList.toggle('fa-bars',!open);menuIcon.classList.toggle('fa-times',open);});
-   function setLang(lang){localStorage.setItem('lang',lang);document.documentElement.lang=lang==='jp'?'ja':'en';document.querySelectorAll('[data-i18n]').forEach(el=>{const value=translations[el.dataset.i18n];if(value)el.textContent=value[lang];});document.querySelectorAll('.lang-toggle').forEach(btn=>btn.textContent=lang==='en'?'EN / JP':'JP / EN');}
+   function setLang(lang){localStorage.setItem('lang',lang);document.documentElement.lang=lang==='jp'?'ja':'en';document.querySelectorAll('[data-i18n]').forEach(el=>{const value=translations[el.dataset.i18n];if(value)el.textContent=value[lang];});window.updateLanguageToggles?.(lang);}
    document.querySelectorAll('.lang-toggle').forEach(btn=>btn.addEventListener('click',()=>setLang((localStorage.getItem('lang')||'en')==='en'?'jp':'en')));setLang(localStorage.getItem('lang')||'en');
    const lightbox=document.getElementById('photo-lightbox'), lightboxImage=document.getElementById('lightbox-image'), closeButton=document.getElementById('lightbox-close');
    function closeLightbox(){lightbox.classList.remove('is-open');document.body.style.overflow='';}
