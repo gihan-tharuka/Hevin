@@ -51,6 +51,77 @@
 .photo-card:hover img { transform: scale(1.035); filter: saturate(1.05); }
 .photo-card:hover::after { opacity: 1; transform: translateY(0); }
 
+/* Product imagery uses an asymmetric editorial flow tuned to each subject. */
+.product-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  columns: auto;
+}
+
+.product-gallery .product-photo {
+  margin: 0;
+}
+
+.product-gallery .product-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-photo--baker { width: 94%; aspect-ratio: 4 / 5; }
+.product-photo--pastries { aspect-ratio: 16 / 10; }
+.product-photo--boxed { width: 90%; align-self: flex-end; aspect-ratio: 1 / 1; }
+.product-photo--toast { width: 96%; aspect-ratio: 4 / 3; }
+.product-photo--storefront { aspect-ratio: 16 / 9; }
+.product-photo--sign { width: 82%; aspect-ratio: 3 / 4; }
+.product-photo--exterior { width: 94%; align-self: flex-end; aspect-ratio: 16 / 10; }
+.product-photo--drink { width: 88%; aspect-ratio: 4 / 5; }
+.product-photo--menu { aspect-ratio: 4 / 3; }
+.product-photo--ceiling { width: 92%; align-self: flex-end; aspect-ratio: 1 / 1; }
+
+.product-photo--baker img { object-position: 50% 44%; }
+.product-photo--pastries img { object-position: 50% 52%; }
+.product-photo--boxed img { object-position: 50% 50%; }
+.product-photo--toast img { object-position: 50% 46%; }
+.product-photo--storefront img { object-position: 50% 54%; }
+.product-photo--sign img { object-position: 50% 50%; }
+.product-photo--exterior img { object-position: 50% 52%; }
+.product-photo--drink img { object-position: 52% 50%; }
+.product-photo--menu img { object-position: 55% 50%; }
+.product-photo--ceiling img { object-position: 50% 50%; }
+
+/* An editorial composition for the portrait series. The complete photographs
+   remain available in the lightbox while the gallery uses considered crops. */
+.people-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  columns: auto;
+}
+
+.people-gallery .people-photo {
+  margin: 0;
+}
+
+.people-gallery .people-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.people-photo--portrait { aspect-ratio: 4 / 5; }
+.people-photo--seated-one { width: 88%; aspect-ratio: 1 / 1; }
+.people-photo--seated-two { width: 94%; align-self: flex-end; aspect-ratio: 4 / 5; }
+.people-photo--closeup { width: 92%; align-self: flex-end; aspect-ratio: 16 / 11; }
+.people-photo--finale { aspect-ratio: 16 / 10; }
+
+.people-photo--portrait img { object-position: 50% 48%; }
+.people-photo--seated-one img { object-position: 50% 48%; }
+.people-photo--seated-two img { object-position: 50% 38%; }
+.people-photo--closeup img { object-position: 50% 38%; }
+.people-photo--finale img { object-position: 50% 35%; }
+
 .photo-lightbox {
   position: fixed;
   inset: 0;
@@ -67,7 +138,86 @@
 .photo-lightbox img { max-width: min(92vw, 1400px); max-height: 88vh; object-fit: contain; border-radius: 1rem; box-shadow: 0 30px 90px rgba(0,0,0,.45); }
 .photo-lightbox button { position: absolute; top: 1.25rem; right: 1.25rem; width: 2.75rem; height: 2.75rem; border-radius: 999px; color: #fff; background: rgba(255,255,255,.12); }
 
-@media (min-width: 640px) { .photo-gallery { columns: 2; column-gap: 1.25rem; } .photo-card { margin-bottom: 1.25rem; } }
-@media (min-width: 1100px) { .photo-gallery { columns: 3; column-gap: 1.5rem; } .photo-card { margin-bottom: 1.5rem; border-radius: 1.5rem; } }
+@media (min-width: 640px) {
+  .photo-gallery { columns: 2; column-gap: 1.25rem; }
+  .photo-card { margin-bottom: 1.25rem; }
+
+  .product-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: clamp(7rem, 12vw, 9rem);
+    gap: 1.25rem;
+  }
+
+  .product-gallery .product-photo {
+    width: auto;
+    aspect-ratio: auto;
+    align-self: stretch;
+  }
+
+  .product-photo--baker { grid-column: 1; grid-row: 1 / span 4; }
+  .product-photo--pastries { grid-column: 2; grid-row: 1 / span 2; }
+  .product-photo--boxed { grid-column: 2; grid-row: 3 / span 2; }
+  .product-photo--toast { grid-column: 1 / span 2; grid-row: 5 / span 2; }
+  .product-photo--storefront { grid-column: 1; grid-row: 7 / span 2; }
+  .product-photo--sign { grid-column: 2; grid-row: 7 / span 4; }
+  .product-photo--exterior { grid-column: 1; grid-row: 9 / span 2; }
+  .product-photo--drink { grid-column: 1; grid-row: 11 / span 2; }
+  .product-photo--menu { grid-column: 2; grid-row: 11 / span 2; }
+  .product-photo--ceiling { grid-column: 1 / span 2; grid-row: 13 / span 2; }
+
+  .people-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: clamp(7rem, 12vw, 9rem);
+    gap: 1.25rem;
+  }
+
+  .people-gallery .people-photo {
+    width: auto;
+    aspect-ratio: auto;
+    align-self: stretch;
+  }
+
+  .people-photo--portrait { grid-column: 1; grid-row: 1 / span 4; }
+  .people-photo--closeup { grid-column: 2; grid-row: 1 / span 2; }
+  .people-photo--seated-one { grid-column: 2; grid-row: 3 / span 2; }
+  .people-photo--seated-two { grid-column: 1; grid-row: 5 / span 3; }
+  .people-photo--finale { grid-column: 2; grid-row: 5 / span 3; }
+}
+
+@media (min-width: 1100px) {
+  .photo-gallery { columns: 3; column-gap: 1.5rem; }
+  .photo-card { margin-bottom: 1.5rem; border-radius: 1.5rem; }
+
+  .product-gallery {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: repeat(18, clamp(3rem, 4vw, 3.75rem));
+    gap: 1.5rem;
+  }
+
+  .product-photo--baker { grid-column: 1 / span 4; grid-row: 1 / span 7; }
+  .product-photo--pastries { grid-column: 5 / span 8; grid-row: 1 / span 3; }
+  .product-photo--boxed { grid-column: 5 / span 4; grid-row: 4 / span 4; }
+  .product-photo--toast { grid-column: 9 / span 4; grid-row: 4 / span 4; }
+  .product-photo--sign { grid-column: 1 / span 3; grid-row: 8 / span 7; }
+  .product-photo--storefront { grid-column: 4 / span 9; grid-row: 8 / span 4; }
+  .product-photo--exterior { grid-column: 4 / span 5; grid-row: 12 / span 3; }
+  .product-photo--drink { grid-column: 9 / span 4; grid-row: 12 / span 3; }
+  .product-photo--menu { grid-column: 1 / span 5; grid-row: 15 / span 4; }
+  .product-photo--ceiling { grid-column: 6 / span 7; grid-row: 15 / span 4; }
+
+  .people-gallery {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: repeat(12, clamp(3.75rem, 5.2vw, 4.75rem));
+    gap: 1.5rem;
+  }
+
+  .people-photo--portrait { grid-column: 1 / span 5; grid-row: 1 / span 8; }
+  .people-photo--closeup { grid-column: 6 / span 7; grid-row: 1 / span 4; }
+  .people-photo--seated-one { grid-column: 6 / span 3; grid-row: 5 / span 4; }
+  .people-photo--seated-two { grid-column: 9 / span 4; grid-row: 5 / span 4; }
+  .people-photo--finale { grid-column: 1 / span 12; grid-row: 9 / span 4; }
+}
 @media (min-width: 640px) { .photography-main { height: 100vh; overflow-y: auto; } }
 @media (prefers-reduced-motion: reduce) { .photo-card img, .photo-card::after { transition: none; } }
