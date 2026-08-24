@@ -47,18 +47,6 @@ body > aside h1 .brand-first,
 body > aside h1 .brand-last {
   display: block;
 }
-
-body > aside h1::after {
-  content: "VISUAL STORYTELLER";
-  display: block;
-  margin-top: 0.65rem;
-  color: #9ca3af;
-  font-family: Arial, sans-serif;
-  font-size: 0.55rem;
-  font-weight: 600;
-  letter-spacing: 0.3em;
-}
-
 body > aside nav#menu {
   align-items: stretch !important;
   width: 100%;
